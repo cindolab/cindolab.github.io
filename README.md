@@ -12,9 +12,9 @@
 
 > **Didirikan pada Portal 11:11 | 11 November 2025, 01:11 PM WIB**  
 
-# README Numerologi "NGROSO"
+# README Numerologi "CINDOLAB"
 
-Kata **NGROSO** (arti Jawa: *meresapi/menyelami*) dihitung dengan **6 sistem numerologi dunia**.
+Kata **CINDOLAB** dihitung dengan **6 sistem numerologi dunia**.
 
 ---
 
@@ -22,12 +22,12 @@ Kata **NGROSO** (arti Jawa: *meresapi/menyelami*) dihitung dengan **6 sistem num
 
 | Sistem | Angka | Makna Utama | Kategori |
 |--------|-------|-------------|----------|
-| **Pythagoras** | **7** | Introspeksi, spiritual, analisis | ⭐ Inti |
-| **Chaldean** | **9** | Kemanusiaan, penyelesaian siklus | ⭐ Kuat |
-| **Kabbalah** | **7** | Kebijaksanaan batin | ⭐ Inti |
-| **Petungan Jawa** | **8** | Kekuatan, keseimbangan materi-spiritual | ⚖️ Seimbang |
-| **Tionghoa (54 goresan)** | **54 → 9** | **大吉** – Kemakmuran besar, sukses lancar | 🌟 **TERBAIK** |
-| **Vedic India** | **9 (Mars)** | Berani, energik, pemimpin | 🔥 Dinamis |
+| **Pythagoras** | **33** (Master) | Master Teacher: kasih sayang murni, welas asih tinggi, pengajaran spiritual, kemanusiaan universal | ⭐ Kuat (Elevated) |
+| **Chaldean** | **8** | Kekuatan, ambisi, organisasi, pencapaian materi, leadership | ⚖️ Seimbang |
+| **Kabbalah** | **8** | Penyelesaian siklus, kebijaksanaan universal, pengorbanan demi yang besar | ⭐ Kuat |
+| **Petungan Jawa** | **8** | Kekuatan batin, keseimbangan duniawi-rohani, keteguhan hati | ⚖️ Seimbang |
+| **Tionghoa (stroke count simulasi)** | **45 → 9** | **大吉** – Pencapaian besar setelah rintangan, sukses mendadak, kemakmuran, dihormati banyak orang | 🌟 **TERBAIK** |
+| **Vedic India** | **9 (Mars)** | Berani, energik, dinamis, semangat juang tinggi, pemimpin alami | 🔥 Dinamis |
 
 ---
 
@@ -35,20 +35,20 @@ Kata **NGROSO** (arti Jawa: *meresapi/menyelami*) dihitung dengan **6 sistem num
 
 ---
 
-## Selamat Datang di Ngroso
+## Selamat Datang di CindoLab
 
-**Ngroso** adalah **laboratorium fintech terbuka** yang mempelajari dan meniru model kesuksesan **bank terbesar dunia** —  
+**CindoLab** adalah **laboratorium fintech terbuka/laboratorium cuan Indonesia** yang mempelajari dan meniru model kesuksesan **bank terbesar dunia** —  
 **ICBC • CCB • ABC • BOC • JPMorgan Chase** —  
 dengan teknologi **blockchain, smart contract, dan identitas Web3**.
 
 > Kami **bukan bank**.  
-> Kami adalah **blueprint masa depan keuangan terdesentralisasi**.
+> Kami adalah **blueprint masa depan laboratorium keuangan terdesentralisasi**.
 
 ---
 
-## Tentang Ngroso
+## Tentang CindoLab
 
-Ngroso adalah **inti inovasi** dari tim **Puncak Lembah**, **Cindo Labs**, dan pemilik ENS:  
+CindoLab adalah **inti inovasi** dari tim **Puncak Lembah**, **arema.eth**, dan pemilik ENS:  
 [`cindo.eth`](https://app.ens.domains/cindo.eth) | [`arema.eth`](https://app.ens.domains/arema.eth)
 
 ### Visi
@@ -90,17 +90,17 @@ Membangun **laboratorium fintech terbuka** yang menggabungkan **data perbankan g
 | **CINDOETH** | C=3, I=9, N=5, D=4, O=6, E=5, T=2, H=8 → **42 → 6** | **6** | Harmoni, kemakmuran, pelayanan |
 | **Portal 11:11** | 11 (Master) + 6 → **17 → 8** | **8** | Kekayaan, otoritas, kesuksesan |
 
-> **Tionghoa (54 goresan)** | **54 → 9** | **大吉** – Kemakmuran besar, sukses lancar | 🌟 **TERBAIK**  
+> **Tionghoa (45 goresan)** | **45 → 9** | **大吉** – Kemakmuran besar, sukses lancar | 🌟 **TERBAIK**  
 > **Peluncuran 11:11 → Energi 8 → Hari terbaik untuk manifestasi keuangan!*
 
 ### Apa Itu **Portal 11:11**?
 > **Portal 11:11** adalah **momen energi tinggi** dalam numerologi modern — terjadi saat **tanggal & jam menunjukkan 11:11** (11 November pukul 11:11).  
 > Dianggap sebagai **gerbang manifestasi**, **sinkronisitas**, dan **awal baru** — sangat kuat untuk **peluncuran proyek, visi, dan tujuan jangka panjang**.  
-> **Hari ini (11/11/2025)** adalah **Portal 11:11 tahunan** — energi **8** dari **11 + 6 = 17 → 8** — **hari terbaik untuk meluncurkan Ngroso**. https://gitlab.com/ngroso
+> **Hari ini (11/11/2025)** adalah **Portal 11:11 tahunan** — energi **8** dari **11 + 6 = 17 → 8** — **hari terbaik untuk meluncurkan CindoLab**. https://gitlab.com/cindolab dan https://trustlessness.eth.limo/ juga diluncurkan pada 2025 Nov 11
 
 ---
 
-## Mengapa Ngroso?
+## Mengapa CindoLab?
 
 - **Identitas Web3 Asli** → `cindo.eth` = kepemilikan terverifikasi  
 - **Transparansi 100%** → Semua kode, data, & smart contract open-source  
@@ -112,7 +112,7 @@ Membangun **laboratorium fintech terbuka** yang menggabungkan **data perbankan g
 ## Cara Memulai
 
 1. **Jelajahi Riset**  
-   → [ngroso.streamlit.app](https://ngroso.streamlit.app/)  
+   → [https://cindolab.github.io/a1-whitepaper](https://cindolab.github.io/a1-whitepaper)
    *Laporan, simulasi, whitepaper*
 
 2. **Verifikasi ENS**  
@@ -120,7 +120,7 @@ Membangun **laboratorium fintech terbuka** yang menggabungkan **data perbankan g
 
 3. **Kontribusi**  
    ```bash
-   git clone https://github.com/ngroso/ngroso.git
+   git clone https://github.com/cindolab/cindolab.git
 
 ## Ikuti Perjalanan Kami
 
