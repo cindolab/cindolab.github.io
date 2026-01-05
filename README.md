@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ngroso/ngroso.github.io/main/cindo1.svg" alt="Cindo Lab" width="180">
+  <img src="https://raw.githubusercontent.com/cindolab/cindolab.github.io/main/cindo1.svg" alt="CindoLab" width="180">
 </p>
 
-# Cindo Lab  
+# CindoLab  
 **Fintech Research & Innovation Lab | Web3 Banking Replication**
 
 [![ENS cindo.eth](https://img.shields.io/badge/ENS-cindo.eth-0066ff.svg?style=flat&logo=ethereum&logoColor=white)](https://app.ens.domains/cindo.eth)  
@@ -12,9 +12,9 @@
 
 > **Didirikan pada Portal 11:11 | 11 November 2025, 01:11 PM WIB**  
 
-# README Numerologi "CINDOLAB"
+# README Numerologi "CindoLab"
 
-Kata **CINDOLAB** dihitung dengan **6 sistem numerologi dunia**.
+Kata **CindoLab** dihitung dengan **6 sistem numerologi dunia**.
 
 ---
 
@@ -126,10 +126,10 @@ Membangun **laboratorium fintech terbuka** yang menggabungkan **data perbankan g
 
 | Platform       | Link                                                                 |
 |----------------|----------------------------------------------------------------------|
-| Website        | [ngroso.github.io](https://ngroso.github.io/)                        |
-| Instagram      | [instagram.com/cindolabs](https://www.instagram.com/cindolabs/)      |
-| X (Twitter)    | [@ngroso9](https://x.com/ngroso9)                                    |
-| Facebook       | [facebook.com/cindolabs](https://www.facebook.com/cindolabs)         |
+| Website        | [cindolab.github.io](https://cindolab.github.io/)                    |
+| Instagram      | [instagram.com/cindolabot](https://www.instagram.com/cindolabot/)    |
+| X (Twitter)    | [@cindolab](https://x.com/cindolab)                                  |
+| Facebook       | [facebook.com/cindolab](https://www.facebook.com/cindolab)           |
 
 ---
 
@@ -147,7 +147,7 @@ Kami **membuka pintu lebar** untuk:
 
 | Tahun | Fokus Utama | Rencana Strategis |
 |-------|-------------|------------------|
-| **2025** | Fondasi & Branding | - Peluncuran platform `Hocindo` <br> - Logo & identitas visual <br> - Website resmi & profil investasi |
+| **2025** | Fondasi & Branding | - Peluncuran platform `CindoLab` <br> - Logo & identitas visual <br> - Website resmi & profil investasi |
 | **2026** | Ekspansi & Produk | - Pembukaan hotel kreatif pertama <br> - Paket pengalaman romantis & bisnis <br> - Program investasi properti tahap awal |
 | **2027** | Skala & Globalisasi | - Ekspansi ke beberapa kota besar di Indonesia <br> - Kemitraan internasional <br> - Platform investasi berbasis blockchain |
 
@@ -158,7 +158,7 @@ Kami **membuka pintu lebar** untuk:
    Bandarkedungmulyo – Jombang,
    Jawa Timur – Indonesia 🇮🇩   
 📧 Email: [ringinbambu@gmail.com](mailto:ringinbambu@gmail.com)  
-📱 WhatsApp: [+62 8999 587 888](https://wa.me/628999587888)  
+📱 WhatsApp: [+628 999 587 888](https://wa.me/628999587888)  
 
 ---
 
@@ -171,6 +171,6 @@ Kami **membuka pintu lebar** untuk:
 
 ---
 
-> **© 2025 Ngroso**  
+> **© 2026 CindoLab**  
 > *Dari Portal 11:11 menuju harmoni keuangan terdesentralisasi.*  
 > `cindo.eth` — **verified on-chain, trusted off-chain.**
