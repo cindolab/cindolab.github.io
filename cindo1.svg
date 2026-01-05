@@ -1,26 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
-  <!-- Latar belakang biru solid, minimalis -->
+  <!-- Latar belakang biru solid -->
   <rect width="1200" height="300" fill="#0052FF"/>
   
-  <!-- Teks utama: CindoLab – posisi centered, bold, putih -->
-  <text 
-    x="600" 
-    y="180" 
-    font-family="Arial, Helvetica, sans-serif" 
-    font-size="140" 
-    font-weight="bold" 
-    fill="#FFFFFF" 
-    text-anchor="middle"
-  >CindoLab</text>
+  <!-- Elemen dekorasi diamond (dipindah agak ke kiri agar seimbang dengan teks) -->
+  <g transform="translate(120,150) rotate(45) translate(-120,-150)">
+    <rect x="70" y="70" width="160" height="160" rx="30" fill="#FFFFFF"/>
+    <rect x="110" y="110" width="80" height="80" rx="15" fill="#0052FF"/>
+  </g>
   
-  <!-- Opsional: subtitle kecil di bawah (bisa dihapus jika terlalu panjang) -->
+  <!-- Teks CindoLab – posisi disesuaikan agar terlihat seimbang & tidak kepanjangan -->
   <text 
-    x="600" 
-    y="240" 
-    font-family="Arial, sans-serif" 
-    font-size="40" 
-    fill="#FFFFFF" 
-    text-anchor="middle" 
-    opacity="0.9"
-  >Laboratorium Numerologi & Spiritual</text>
+    x="380" 
+    y="185" 
+    font-family="Arial, Helvetica, sans-serif" 
+    font-size="110" 
+    font-weight="bold" 
+    fill="#FFFFFF"
+  >CindoLab</text>
 </svg>
