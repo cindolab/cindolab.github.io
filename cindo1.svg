@@ -2,19 +2,20 @@
   <!-- Latar belakang biru solid -->
   <rect width="1200" height="300" fill="#0052FF"/>
   
-  <!-- Dekorasi diamond – posisi sedikit lebih ke kiri untuk ruang -->
-  <g transform="translate(100,150) rotate(45) translate(-100,-150)">
+  <!-- Logo diamond – posisi lebih ke kiri & presisi -->
+  <g transform="translate(90,150) rotate(45) translate(-90,-150)">
     <rect x="70" y="70" width="160" height="160" rx="30" fill="#FFFFFF"/>
     <rect x="110" y="110" width="80" height="80" rx="15" fill="#0052FF"/>
   </g>
   
-  <!-- Teks CindoLab – digeser lebih ke kiri (x=320) agar dekat logo -->
+  <!-- Teks CindoLab – digeser mendekat logo, ukuran & posisi presisi -->
   <text 
-    x="320" 
+    x="310" 
     y="185" 
     font-family="Arial, Helvetica, sans-serif" 
-    font-size="120" 
+    font-size="118" 
     font-weight="bold" 
     fill="#FFFFFF"
+    dominant-baseline="middle"
   >CindoLab</text>
 </svg>
