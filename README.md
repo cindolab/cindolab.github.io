@@ -124,12 +124,13 @@ Membangun **laboratorium fintech terbuka** yang menggabungkan **data perbankan g
 
 ## Ikuti Perjalanan Kami
 
-| Platform       | Link                                                                 |
-|----------------|----------------------------------------------------------------------|
-| Website        | [cindolab.github.io](https://cindolab.github.io/)                    |
-| Instagram      | [instagram.com/cindolabot](https://www.instagram.com/cindolabot/)    |
-| X (Twitter)    | [@cindolab](https://x.com/cindolab)                                  |
-| Facebook       | [facebook.com/cindolab](https://www.facebook.com/cindolab)           |
+| Platform       | Link                                                                     |
+|----------------|--------------------------------------------------------------------------|
+| Website        | [cindolab.github.io](https://cindolab.github.io/)                        |
+| Instagram      | [instagram.com/cindolabot](https://www.instagram.com/cindolabot/)        |
+| X (Twitter)    | [@cindolab](https://x.com/cindolab)                                      |
+| Facebook       | [facebook.com/cindolab](https://www.facebook.com/cindolab)               |
+| CindoPay       | [https://cindopay.cindo.workers.dev](https://cindopay.cindo.workers.dev) |
 
 ---
 
