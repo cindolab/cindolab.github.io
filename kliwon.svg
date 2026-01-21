@@ -25,15 +25,7 @@
     <!-- Inner silver shield -->
     <path d="M0,-100 Q-80,-50 -80,0 Q-80,50 0,100 Q80,50 80,0 Q80,-50 0,-100 Z" fill="#A9A9A9" opacity="0.9"/>
     
-    <!-- KLW monogram -->
-    <g fill="none" stroke="#FFD700" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
-      <!-- K -->
-      <path d="M-70,-60 L-70,60 M-70,0 L-30,0 M-30,0 L0,-60 M-30,0 L0,60"/>
-      <!-- L -->
-      <path d="M10,-60 L10,60 L60,60"/>
-      <!-- W with arrow -->
-      <path d="M-20,0 L0,-60 L20,0 L40,-60 L60,0"/>
-    </g>
+    
     
     <!-- Arrow up -->
     <path d="M0,-130 L0,-20" stroke="#FFD700" stroke-width="20" stroke-linecap="round"/>
