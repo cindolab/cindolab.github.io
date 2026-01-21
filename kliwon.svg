@@ -41,8 +41,8 @@
   </g>
   
   <!-- Text elements -->
-  <text x="200" y="55" font-family="Arial Black, sans-serif" font-size="32" font-weight="bold" fill="#D4AF37" text-anchor="middle" letter-spacing="3">KLIWIWON</text>
-  <text x="200" y="365" font-family="Arial Black, sans-serif" font-size="32" font-weight="bold" fill="#D4AF37" text-anchor="middle" letter-spacing="3">KLIWIWON</text>
+  <text x="200" y="55" font-family="Arial Black, sans-serif" font-size="32" font-weight="bold" fill="#D4AF37" text-anchor="middle" letter-spacing="3">KLIWON</text>
+  <text x="200" y="365" font-family="Arial Black, sans-serif" font-size="32" font-weight="bold" fill="#D4AF37" text-anchor="middle" letter-spacing="3">KLIWON</text>
   
   <text x="50" y="200" font-family="Arial Black, sans-serif" font-size="28" font-weight="bold" fill="#D4AF37" text-anchor="middle" transform="rotate(-90 50 200)">KLW</text>
   <text x="350" y="200" font-family="Arial Black, sans-serif" font-size="28" font-weight="bold" fill="#D4AF37" text-anchor="middle" transform="rotate(90 350 200)">KLW</text>
