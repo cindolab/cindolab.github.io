@@ -655,8 +655,9 @@
                     <td class="p-5 text-right text-white">${formatRupiah(item.price)}</td>
                     <td class="p-5 text-right text-emerald-400 text-xs font-bold">+${formatRupiah(margin)} (${marginPercent})</td>
                     <td class="p-5 text-right font-bold text-white">${item.stock}</td>
-                    <td class="p-5 text-center">
-                         <button onclick="editStock(${item.id})" class="text-indigo-400 hover:text-white">Edit</button>
+                    <td class="p-5 text-center px-2">
+                         <button onclick="editStock(${item.id})" class="text-indigo-400 hover:text-white mr-2">Edit</button>
+                         <button onclick="deleteStock(${item.id})" class="text-rose-400 hover:text-white">Hapus</button>
                     </td>
                 `;
                 tbody.appendChild(tr);
