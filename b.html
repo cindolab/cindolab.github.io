@@ -724,6 +724,37 @@
             closeProductModal();
         });
 
+        // --- MARGIN CALCULATOR ---
+        const buyPriceInput = document.getElementById('prodBuyPrice');
+        const priceInput = document.getElementById('prodPrice');
+        const marginPreview = document.createElement('div');
+        marginPreview.id = 'marginPreview';
+        marginPreview.className = 'text-xs font-bold mt-2 text-right';
+        // Insert after the grid container of prices
+        priceInput.parentElement.parentElement.after(marginPreview);
+
+        function updateMarginPreview() {
+            const buy = parseFloat(buyPriceInput.value) || 0;
+            const sell = parseFloat(priceInput.value) || 0;
+            const margin = sell - buy;
+            const percent = sell > 0 ? ((margin / sell) * 100).toFixed(0) : 0;
+
+            if (margin > 0) {
+                marginPreview.className = 'text-xs font-bold mt-2 text-right text-emerald-400';
+                marginPreview.innerHTML = `Estimasi Profit: +${formatRupiah(margin)} (${percent}%)`;
+            } else if (margin < 0) {
+                marginPreview.className = 'text-xs font-bold mt-2 text-right text-rose-400';
+                marginPreview.innerHTML = `Estimasi Rugi: ${formatRupiah(margin)} (${percent}%)`;
+            } else {
+                marginPreview.className = 'text-xs font-bold mt-2 text-right text-slate-500';
+                marginPreview.innerHTML = `Tidak Ada Profit (0%)`;
+            }
+        }
+
+        buyPriceInput.addEventListener('input', updateMarginPreview);
+        priceInput.addEventListener('input', updateMarginPreview);
+
+
         // --- HISTORY ---
         function renderHistory() {
             const tbody = document.getElementById('historyTable');
