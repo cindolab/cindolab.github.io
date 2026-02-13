@@ -645,7 +645,7 @@
 
             inventory.forEach(item => {
                 const margin = item.price - item.buyPrice;
-                const marginPercent = ((margin / item.price) * 100).toFixed(0) + '%';
+                const marginPercent = item.buyPrice > 0 ? ((margin / item.buyPrice) * 100).toFixed(0) + '%' : '∞%';
 
                 const tr = document.createElement('tr');
                 tr.className = 'hover:bg-white/5 transition-colors';
@@ -754,7 +754,7 @@
             const buy = parseFloat(buyPriceInput.value) || 0;
             const sell = parseFloat(priceInput.value) || 0;
             const margin = sell - buy;
-            const percent = sell > 0 ? ((margin / sell) * 100).toFixed(0) : 0;
+            const percent = buy > 0 ? ((margin / buy) * 100).toFixed(0) : (sell > 0 ? '∞' : 0);
 
             if (margin > 0) {
                 marginPreview.className = 'text-xs font-bold mt-2 text-right text-emerald-400';
