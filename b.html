@@ -163,8 +163,7 @@
         </nav>
 
         <div class="mt-auto pt-6 border-t border-slate-700/50">
-            <p class="text-[10px] text-slate-600 text-center">&copy; 2026 CindoLab Technology<br>Ver 2.0.0 (Midnight)
-            </p>
+            <p class="text-[10px] text-slate-600 text-center">&copy; 2026 CindoLab Technology<br>Ver 2.1.0 (Profit)</p>
         </div>
     </aside>
 
@@ -176,51 +175,50 @@
             <header class="flex justify-between items-end mb-4">
                 <div>
                     <h2 class="text-3xl font-bold text-white">Ringkasan Bisnis</h2>
-                    <p class="text-slate-400">Pantau performa penjualan agar-agar bubuk Anda.</p>
+                    <p class="text-slate-400">Pantau performa penjualan & keuntungan real-time.</p>
                 </div>
                 <div class="text-right">
-                    <span class="text-xs text-slate-500 block mb-1">SALDO KAS SAAT INI</span>
-                    <span id="currentBalance" class="text-2xl font-bold text-emerald-400">Rp 0</span>
+                    <span class="text-xs text-slate-500 block mb-1">PROFIT HARI INI</span>
+                    <span id="todayProfit" class="text-2xl font-bold text-emerald-400">Rp 0</span>
                 </div>
             </header>
 
             <!-- Stats Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Omset -->
                 <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group">
                     <div
                         class="absolute -right-6 -top-6 w-24 h-24 bg-indigo-500/20 rounded-full blur-2xl group-hover:bg-indigo-500/30 transition-all">
                     </div>
-                    <p class="text-sm font-medium text-slate-400 mb-2">Penjualan Bulan Ini</p>
+                    <p class="text-sm font-medium text-slate-400 mb-2">Omset Bulan Ini</p>
                     <h3 id="monthlySales" class="text-3xl font-bold text-white">Rp 0</h3>
-                    <p class="text-xs text-emerald-400 mt-2 flex items-center gap-1">
-                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                        </svg>
-                        Gross Revenue
+                    <p class="text-xs text-indigo-400 mt-2 flex items-center gap-1">
+                        Total Penjualan Kotor
                     </p>
                 </div>
+                <!-- Modal -->
                 <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group">
                     <div
                         class="absolute -right-6 -top-6 w-24 h-24 bg-pink-500/20 rounded-full blur-2xl group-hover:bg-pink-500/30 transition-all">
                     </div>
-                    <p class="text-sm font-medium text-slate-400 mb-2">Pengeluaran Bulan Ini</p>
-                    <h3 id="monthlyExpenses" class="text-3xl font-bold text-white">Rp 0</h3>
-                    <p class="text-xs text-rose-400 mt-2">Termasuk pembelian stok</p>
+                    <p class="text-sm font-medium text-slate-400 mb-2">Modal Terjual</p>
+                    <h3 id="monthlyCost" class="text-3xl font-bold text-white">Rp 0</h3>
+                    <p class="text-xs text-rose-400 mt-2">HPP (Harga Pokok Penjualan)</p>
                 </div>
+                <!-- Profit -->
                 <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group">
                     <div
                         class="absolute -right-6 -top-6 w-24 h-24 bg-emerald-500/20 rounded-full blur-2xl group-hover:bg-emerald-500/30 transition-all">
                     </div>
-                    <p class="text-sm font-medium text-slate-400 mb-2">Profit Bersih</p>
+                    <p class="text-sm font-medium text-slate-400 mb-2">Keuntungan Bersih</p>
                     <h3 id="monthlyProfit" class="text-3xl font-bold text-emerald-400">Rp 0</h3>
-                    <p class="text-xs text-slate-500 mt-2">Net Income</p>
+                    <p class="text-xs text-slate-500 mt-2">Omset - Modal</p>
                 </div>
             </div>
 
             <!-- Chart Area -->
             <div class="glass-panel p-6 rounded-2xl border-t border-white/10">
-                <h3 class="text-lg font-semibold text-white mb-6">Tren Penjualan (7 Hari Terakhir)</h3>
+                <h3 class="text-lg font-semibold text-white mb-6">Tren Penjualan & Profit (7 Hari)</h3>
                 <div class="w-full h-64 md:h-80">
                     <canvas id="salesChart"></canvas>
                 </div>
@@ -306,8 +304,8 @@
         <section id="stok" class="hidden space-y-6">
             <header class="flex justify-between items-center mb-4">
                 <div>
-                    <h2 class="text-3xl font-bold text-white">Manajemen Stok</h2>
-                    <p class="text-slate-400">Atur inventaris barang dagangan.</p>
+                    <h2 class="text-3xl font-bold text-white">Manajemen Stok & Harga</h2>
+                    <p class="text-slate-400">Atur stok dan harga beli untuk menghitung profit.</p>
                 </div>
                 <button onclick="openAddProductModal()"
                     class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2.5 rounded-xl font-medium transition-colors">
@@ -320,9 +318,10 @@
                     <thead class="bg-slate-800/50 text-slate-400 uppercase text-xs">
                         <tr>
                             <th class="p-5 font-semibold">Nama Barang</th>
+                            <th class="p-5 font-semibold text-right">Harga Beli (Modal)</th>
                             <th class="p-5 font-semibold text-right">Harga Jual</th>
+                            <th class="p-5 font-semibold text-right">Margin</th>
                             <th class="p-5 font-semibold text-right">Stok</th>
-                            <th class="p-5 font-semibold text-center">Status</th>
                             <th class="p-5 font-semibold text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -338,7 +337,7 @@
             <header class="flex justify-between items-center mb-4">
                 <div>
                     <h2 class="text-3xl font-bold text-white">Riwayat Transaksi</h2>
-                    <p class="text-slate-400">Log lengkap penjualan dan pembelian.</p>
+                    <p class="text-slate-400">Log lengkap penjualan dan profit per transaksi.</p>
                 </div>
                 <button onclick="exportData()"
                     class="text-indigo-400 hover:text-white text-sm font-medium border border-indigo-500/30 px-4 py-2 rounded-lg hover:bg-indigo-500/20 transition-all">
@@ -351,9 +350,9 @@
                     <thead class="bg-slate-800/50 text-slate-400 uppercase text-xs">
                         <tr>
                             <th class="p-5 font-semibold">ID / Tanggal</th>
-                            <th class="p-5 font-semibold">Tipe</th>
                             <th class="p-5 font-semibold">Detail Barang</th>
-                            <th class="p-5 font-semibold text-right">Total</th>
+                            <th class="p-5 font-semibold text-right">Omset</th>
+                            <th class="p-5 font-semibold text-right">Profit</th>
                             <th class="p-5 font-semibold text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -371,8 +370,9 @@
         class="fixed inset-0 z-[60] bg-black/80 hidden backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 shadow-2xl scale-95 opacity-0 transition-all duration-300 transform"
             id="productModalContent">
-            <h3 class="text-xl font-bold text-white mb-6">Tambah Stok / Barang Baru</h3>
+            <h3 class="text-xl font-bold text-white mb-6">Kelola Barang</h3>
             <form id="productForm" class="space-y-4">
+                <input type="hidden" id="prodId">
                 <div>
                     <label class="block text-xs uppercase text-slate-500 font-bold mb-2">Nama Barang</label>
                     <input type="text" id="prodName" required
@@ -380,22 +380,26 @@
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs uppercase text-slate-500 font-bold mb-2">Stok Awal</label>
-                        <input type="number" id="prodStock" required min="1"
+                        <label class="block text-xs uppercase text-slate-500 font-bold mb-2">Harga Beli (Modal)</label>
+                        <input type="number" id="prodBuyPrice" required min="0"
                             class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                     </div>
                     <div>
-                        <label class="block text-xs uppercase text-slate-500 font-bold mb-2">Harga Jual (Rp)</label>
+                        <label class="block text-xs uppercase text-slate-500 font-bold mb-2">Harga Jual</label>
                         <input type="number" id="prodPrice" required min="0"
                             class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                     </div>
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-slate-500 font-bold mb-2">Stok Sekarang</label>
+                    <input type="number" id="prodStock" required min="0"
+                        class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                 </div>
                 <div class="pt-4 flex gap-3">
                     <button type="button" onclick="closeProductModal()"
                         class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300 py-3 rounded-xl font-medium transition-colors">Batal</button>
                     <button type="submit"
-                        class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-xl font-bold transition-colors">Simpan
-                        Barang</button>
+                        class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-xl font-bold transition-colors">Simpan</button>
                 </div>
             </form>
         </div>
@@ -420,15 +424,18 @@
 
     <script>
         // --- DATA & STATE ---
-        // Initialize Default Inventory if Empty
+        // Initialize Default Inventory with BuyPrice
         const defaultInventory = [
-            { id: 1, name: 'Agar-agar Bubuk Plain', price: 5000, stock: 100 },
-            { id: 2, name: 'Agar-agar Rasa Coklat', price: 6000, stock: 50 },
-            { id: 3, name: 'Agar-agar Rasa Strawberry', price: 6000, stock: 45 },
-            { id: 4, name: 'Bubuk Jelly Mix', price: 7500, stock: 30 }
+            { id: 1, name: 'Agar-agar Bubuk Plain', buyPrice: 3500, price: 5000, stock: 100 },
+            { id: 2, name: 'Agar-agar Rasa Coklat', buyPrice: 4000, price: 6000, stock: 50 },
+            { id: 3, name: 'Agar-agar Rasa Strawberry', buyPrice: 4000, price: 6000, stock: 45 },
+            { id: 4, name: 'Bubuk Jelly Mix', buyPrice: 5000, price: 7500, stock: 30 }
         ];
 
         let inventory = JSON.parse(localStorage.getItem('cindolab_inventory')) || defaultInventory;
+        // Migrate old inventory if missing buyPrice
+        inventory = inventory.map(i => ({ ...i, buyPrice: i.buyPrice || (i.price * 0.7) }));
+
         let transactions = JSON.parse(localStorage.getItem('cindolab_transactions')) || [];
         let cart = [];
 
@@ -559,13 +566,26 @@
         function processCheckout() {
             if (cart.length === 0) return;
 
+            // Calculate total profit at moment of sale
+            let totalProfit = 0;
+            let totalCost = 0;
+
+            const processedItems = cart.map(item => {
+                const profitPerItem = item.price - item.buyPrice;
+                totalProfit += profitPerItem * item.qty;
+                totalCost += item.buyPrice * item.qty;
+                return { ...item };
+            });
+
             // 1. Create Transaction
             const transaction = {
                 id: Date.now(),
                 date: new Date().toISOString(),
                 type: 'sell',
-                items: JSON.parse(JSON.stringify(cart)), // Deep copy
-                total: cart.reduce((sum, item) => sum + (item.price * item.qty), 0)
+                items: processedItems,
+                total: cart.reduce((sum, item) => sum + (item.price * item.qty), 0),
+                totalCost: totalCost,
+                profit: totalProfit
             };
 
             // 2. Reduce Stock
@@ -619,17 +639,17 @@
             tbody.innerHTML = '';
 
             inventory.forEach(item => {
-                const status = item.stock < 10 ?
-                    '<span class="px-2 py-1 rounded bg-red-500/20 text-red-400 text-xs font-bold">Stok Menipis</span>' :
-                    '<span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-400 text-xs font-bold">Aman</span>';
+                const margin = item.price - item.buyPrice;
+                const marginPercent = ((margin / item.price) * 100).toFixed(0) + '%';
 
                 const tr = document.createElement('tr');
                 tr.className = 'hover:bg-white/5 transition-colors';
                 tr.innerHTML = `
                     <td class="p-5 font-medium text-slate-200">${item.name}</td>
-                    <td class="p-5 text-right text-slate-400">${formatRupiah(item.price)}</td>
+                    <td class="p-5 text-right text-slate-400">${formatRupiah(item.buyPrice)}</td>
+                    <td class="p-5 text-right text-white">${formatRupiah(item.price)}</td>
+                    <td class="p-5 text-right text-emerald-400 text-xs font-bold">+${formatRupiah(margin)} (${marginPercent})</td>
                     <td class="p-5 text-right font-bold text-white">${item.stock}</td>
-                    <td class="p-5 text-center">${status}</td>
                     <td class="p-5 text-center">
                          <button onclick="editStock(${item.id})" class="text-indigo-400 hover:text-white">Edit</button>
                     </td>
@@ -639,12 +659,30 @@
             renderProductGrid(); // Also update grid
         }
 
-        function openAddProductModal() {
+        function openAddProductModal(editId = null) {
+            document.getElementById('productForm').reset();
+            document.getElementById('prodId').value = '';
+
+            if (editId) {
+                const item = inventory.find(i => i.id === editId);
+                if (item) {
+                    document.getElementById('prodId').value = item.id;
+                    document.getElementById('prodName').value = item.name;
+                    document.getElementById('prodBuyPrice').value = item.buyPrice;
+                    document.getElementById('prodPrice').value = item.price;
+                    document.getElementById('prodStock').value = item.stock;
+                }
+            }
+
             document.getElementById('productModal').classList.remove('hidden');
             setTimeout(() => {
                 document.getElementById('productModalContent').classList.remove('scale-95', 'opacity-0');
                 document.getElementById('productModalContent').classList.add('scale-100', 'opacity-100');
             }, 10);
+        }
+
+        function editStock(id) {
+            openAddProductModal(id);
         }
 
         function closeProductModal() {
@@ -653,23 +691,34 @@
             setTimeout(() => {
                 document.getElementById('productModal').classList.add('hidden');
             }, 300);
-            document.getElementById('productForm').reset();
         }
 
         document.getElementById('productForm').addEventListener('submit', (e) => {
             e.preventDefault();
+            const id = document.getElementById('prodId').value;
             const name = document.getElementById('prodName').value;
-            const stock = parseInt(document.getElementById('prodStock').value);
+            const buyPrice = parseInt(document.getElementById('prodBuyPrice').value);
             const price = parseInt(document.getElementById('prodPrice').value);
+            const stock = parseInt(document.getElementById('prodStock').value);
 
-            const newItem = {
-                id: Date.now(),
-                name,
-                stock,
-                price
-            };
+            if (id) {
+                // Edit existing
+                const index = inventory.findIndex(i => i.id == id);
+                if (index !== -1) {
+                    inventory[index] = { ...inventory[index], name, buyPrice, price, stock };
+                }
+            } else {
+                // Add new
+                const newItem = {
+                    id: Date.now(),
+                    name,
+                    buyPrice,
+                    price,
+                    stock
+                };
+                inventory.push(newItem);
+            }
 
-            inventory.push(newItem);
             saveData();
             renderInventory();
             closeProductModal();
@@ -682,19 +731,19 @@
 
             transactions.forEach(t => {
                 let itemsHtml = t.items.map(i => `${i.name} (${i.qty})`).join(', ');
-                const typeClass = t.type === 'sell' ? 'text-emerald-400' : 'text-red-400';
-                const typeLabel = t.type === 'sell' ? 'Penjualan' : 'Pembelian (Stok)';
+                const profit = t.profit || 0;
+                // If profit not stored (legacy data), we might show 0 or estimate.
 
                 const tr = document.createElement('tr');
                 tr.className = 'hover:bg-white/5 transition-colors';
                 tr.innerHTML = `
                     <td class="p-5 text-slate-400">
                         <span class="block text-white font-mono text-xs mb-1">#${t.id.toString().slice(-6)}</span>
-                        ${dayjs(t.date).format('DD MMM YYYY HH:mm')}
+                        ${dayjs(t.date).format('DD MMM YY HH:mm')}
                     </td>
-                    <td class="p-5 ${typeClass} font-medium">${typeLabel}</td>
                     <td class="p-5 text-slate-300 text-sm max-w-xs truncate">${itemsHtml}</td>
                     <td class="p-5 text-right font-bold text-white">${formatRupiah(t.total)}</td>
+                    <td class="p-5 text-right font-bold text-emerald-400">+${formatRupiah(profit)}</td>
                     <td class="p-5 text-center">
                          <button onclick="deleteTransaction(${t.id})" class="text-slate-600 hover:text-red-500 transition-colors" title="Hapus">
                             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
@@ -706,7 +755,7 @@
         }
 
         function deleteTransaction(id) {
-            if (confirm('Hapus transaksi ini? Stok tidak akan dikembalikan otomatis.')) {
+            if (confirm('Hapus transaksi ini?')) {
                 transactions = transactions.filter(t => t.id !== id);
                 saveData();
                 renderHistory();
@@ -716,30 +765,30 @@
 
         // --- DASHBOARD & CHARTS ---
         function updateDashboard() {
-            // Stats
             let totalSales = 0;
-            let totalExpenses = 0; // Currently assumption expenses = buy type, but mostly we just log sales here. Simple logic for now.
-            // If we want to track expenses we need a "Buy Stock" interface. For now, let's just sum "sell" type as Revenue.
+            let totalCost = 0;
+            let totalProfit = 0;
+            let todayProfit = 0;
 
             const currentMonth = dayjs().month();
+            const today = dayjs().format('YYYY-MM-DD');
 
             transactions.forEach(t => {
                 if (t.type === 'sell' && dayjs(t.date).month() === currentMonth) {
                     totalSales += t.total;
+                    totalCost += (t.totalCost || 0); // Handle legacy
+                    totalProfit += (t.profit || 0);
+                }
+
+                if (dayjs(t.date).format('YYYY-MM-DD') === today) {
+                    todayProfit += (t.profit || 0);
                 }
             });
 
-            // Assuming a flat 60% profit margin for demo if no cost price tracked per transaction
-            // Or better, calculate based on inventory cost? Too complex for this file.
-            // Let's use 30% profit margin estimate for visual or just display revenue.
-            // For true profit, we need Cost of Goods Sold (COGS). 
-            // Simplified: Profit = Revenue - (Revenue * 0.7)
-            const estimatedProfit = totalSales * 0.3;
-
             document.getElementById('monthlySales').innerText = formatRupiah(totalSales);
-            document.getElementById('monthlyExpenses').innerText = formatRupiah(totalSales * 0.7); // Dummy cost
-            document.getElementById('monthlyProfit').innerText = formatRupiah(estimatedProfit);
-            document.getElementById('currentBalance').innerText = formatRupiah(totalSales); // Simple cash in hand
+            document.getElementById('monthlyCost').innerText = formatRupiah(totalCost);
+            document.getElementById('monthlyProfit').innerText = formatRupiah(totalProfit);
+            document.getElementById('todayProfit').innerText = formatRupiah(todayProfit);
 
             updateChart();
         }
@@ -749,21 +798,21 @@
 
             // Gradient
             const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-            gradient.addColorStop(0, 'rgba(99, 102, 241, 0.5)'); // Indigo
-            gradient.addColorStop(1, 'rgba(99, 102, 241, 0.0)');
+            gradient.addColorStop(0, 'rgba(16, 185, 129, 0.5)'); // Emerald
+            gradient.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
 
             salesChart = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: [],
                     datasets: [{
-                        label: 'Penjualan',
+                        label: 'Profit Bersih',
                         data: [],
-                        borderColor: '#6366f1',
+                        borderColor: '#10b981',
                         backgroundColor: gradient,
                         borderWidth: 2,
                         pointBackgroundColor: '#ffffff',
-                        pointBorderColor: '#6366f1',
+                        pointBorderColor: '#10b981',
                         fill: true,
                         tension: 0.4
                     }]
@@ -811,8 +860,8 @@
             // Fill Data
             transactions.forEach(t => {
                 const dateKey = dayjs(t.date).format('YYYY-MM-DD');
-                if (dataMap.hasOwnProperty(dateKey) && t.type === 'sell') {
-                    dataMap[dateKey] += t.total;
+                if (dataMap.hasOwnProperty(dateKey)) {
+                    dataMap[dateKey] += (t.profit || 0);
                 }
             });
 
