@@ -3,379 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabel A1 CindoLab - Pertumbuhan 100%</title>
+    <title>Pembukuan Agar-Agar Bubuk</title>
     <link rel="icon" type="image/svg+xml" href="/cindo.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Verdana&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/locale/id.min.js"></script>
     <style>
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-            background: linear-gradient(135deg, #e0e7ff, #f4f4f9);
-            margin: 0;
-            padding: 30px;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .svg-container {
-            max-width: 400px;
-            margin: 20px auto;
-        }
-
-        h1 {
-            color: #1a3c34;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #1a3c34;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-        }
-
-        .table-container {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 1000px;
-            overflow-x: auto;
-        }
-
-        .filter-container {
-            margin-bottom: 20px;
-        }
-
-        .filter-container input {
-            padding: 10px;
-            width: 200px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1em;
-            outline: none;
-        }
-
-        .filter-container input:focus {
-            border-color: #006847;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #e0e0e0;
-            padding: 12px 15px;
-            text-align: center;
-            font-size: 0.95em;
-        }
-
-        th {
-            background: linear-gradient(135deg, #008060, #004c3f);
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            position: sticky;
-            top: 0;
-            z-index: 1;
-        }
-
-        th:hover {
-            background: linear-gradient(135deg, #00a57d, #006847);
-        }
-
-        th.sort-asc::after {
-            content: ' ▲';
-        }
-
-        th.sort-desc::after {
-            content: ' ▼';
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #e8f5e9;
-        }
-
-        .badge-bulan {
-            display: inline-block;
-            background-color: #2A9D8F;
-            color: white;
-            font-family: 'Verdana', monospace;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        .badge-iterasi {
-            display: inline-block;
-            background-color: #4A90E2;
-            color: white;
-            font-family: 'Verdana', monospace;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        .badge-nilaiAwal {
-            display: inline-block;
-            background-color: #9B59B6;
-            color: white;
-            font-family: 'Verdana', monospace;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        .badge-pertumbuhan {
-            display: inline-block;
-            background-color: #E91E63;
-            color: white;
-            font-family: 'Verdana', monospace;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        .badge-penjumlahan {
-            display: inline-block;
-            background-color: #F39C12;
-            color: white;
-            font-family: 'Verdana', monospace;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        .badge-nilaiAkhir {
-            display: inline-block;
-            background-color: #16A085;
-            color: white;
-            font-family: 'Verdana', monospace;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        .badge-kontribusi {
-            display: inline-block;
-            background-color: #7F8C8D;
-            color: white;
-            font-family: 'Verdana', monospace;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            th, td {
-                padding: 8px;
-                font-size: 0.85em;
-            }
-
-            .filter-container input {
-                width: 100%;
-            }
-
-            .badge-bulan, .badge-iterasi, .badge-nilaiAwal, .badge-pertumbuhan,
-            .badge-penjumlahan, .badge-nilaiAkhir, .badge-kontribusi {
-                font-size: 0.8em;
-                padding: 3px 6px;
-            }
-
-            .svg-container {
-                max-width: 300px;
-            }
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Peta Pertumbuhan 100% Perbulan</h1>
-        
-        <!-- SVG Permen Tabrani -->
-        <svg width="180" height="240" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
-  <!-- Sunduk Atas (Doji-style) -->
-  <line x1="90" y1="55" x2="90" y2="80" stroke="#666" stroke-width="3"/>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+    <div class="max-w-4xl mx-auto p-4 md:p-8">
+        <!-- Header -->
+        <header class="mb-8 text-center md:text-left">
+            <h1 class="text-3xl font-bold text-emerald-800">Pembukuan Agar-Agar Bubuk</h1>
+            <p class="text-slate-500">Catatan Transaksi Jual Beli</p>
+        </header>
 
-  <!-- PERMEN (Body Panjang) -->
-  <rect x="65" y="80" width="50" height="60" fill="#32CD32" rx="8"/>
-  <rect x="70" y="85" width="40" height="50" fill="#90EE90" rx="6"/>
-
-  <!-- Sunduk Bawah -->
-  <line x1="90" y1="140" x2="90" y2="160" stroke="#666" stroke-width="3"/>
-
-  <!-- Nama “Permen” – biru X -->
-  <text x="90" y="40" font-size="22" fill="#1DA1F2" font-weight="bold" text-anchor="middle">PERMEN</text>
-
-  <!-- Nama “TABRANI” – biru X -->
-  <text x="90" y="185" font-size="24" fill="#1DA1F2" font-weight="bold" text-anchor="middle">TABRANI</text>
-
-  <!-- Keterangan -->
-  <text x="90" y="210" font-size="11" fill="#555" text-anchor="middle">Produksi CindoLab 2026</text>
-</svg>
-        </div>
-        
-        <!-- Tabel -->
-        <div class="table-container">
-            <h2>Data Pertumbuhan</h2>
-            <p>Fokus pada proses, bukan pada hasil. Fokus pada saat ini, bukan pada masa depan...</p>
-            <div class="filter-container">
-                <input type="text" id="filterInput" placeholder="Filter berdasarkan bulan...">
+        <!-- Dashboard Summary -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-emerald-100">
+                <p class="text-sm font-medium text-slate-500 mb-1">Total Penjualan</p>
+                <p id="totalSales" class="text-2xl font-bold text-emerald-600">Rp 0</p>
             </div>
-            <table id="tradingTable">
-                <thead>
-                    <tr>
-                        <th data-sort="bulan">Bulan</th>
-                        <th data-sort="iterasi">Iterasi</th>
-                        <th data-sort="nilaiAwal">Nilai Awal</th>
-                        <th data-sort="pertumbuhan">Pertumbuhan 100%</th>
-                        <th>Penjumlahan</th>
-                        <th data-sort="nilaiAkhir">Nilai Akhir</th>
-                        <th data-sort="kontribusi">Kontribusi Pertumbuhan (%)</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-red-100">
+                <p class="text-sm font-medium text-slate-500 mb-1">Total Pembelian (Modal)</p>
+                <p id="totalPurchases" class="text-2xl font-bold text-red-600">Rp 0</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-blue-100">
+                <p class="text-sm font-medium text-slate-500 mb-1">Keuntungan Bersih</p>
+                <p id="netProfit" class="text-2xl font-bold text-blue-600">Rp 0</p>
+            </div>
         </div>
+
+        <!-- Input Form -->
+        <div class="bg-white p-6 rounded-xl shadow-md mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-slate-700">Tambah Transaksi Baru</h2>
+            <form id="transactionForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <div class="col-span-1">
+                    <label class="block text-xs font-medium text-slate-500 mb-1">Tanggal</label>
+                    <input type="date" id="date" required class="w-full p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                </div>
+
+                <div class="col-span-1">
+                    <label class="block text-xs font-medium text-slate-500 mb-1">Jenis Transaksi</label>
+                    <div class="flex gap-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="type" value="sell" class="accent-emerald-600 w-4 h-4" checked>
+                            <span class="text-sm">Penjualan (Masuk)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="type" value="buy" class="accent-red-600 w-4 h-4">
+                            <span class="text-sm">Pembelian (Keluar)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-span-1">
+                    <label class="block text-xs font-medium text-slate-500 mb-1">Nama Barang</label>
+                    <input type="text" id="item" value="Agar-agar Bubuk" class="w-full p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                </div>
+
+                <div class="col-span-1">
+                    <label class="block text-xs font-medium text-slate-500 mb-1">Jumlah (Pcs/Kg/Pack)</label>
+                    <input type="number" id="qty" min="1" required placeholder="0" class="w-full p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                </div>
+
+                <div class="col-span-1">
+                    <label class="block text-xs font-medium text-slate-500 mb-1">Harga Satuan (Rp)</label>
+                    <input type="number" id="price" min="0" required placeholder="0" class="w-full p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                </div>
+
+                <div class="col-span-1 md:col-start-2">
+                    <label class="block text-xs font-medium text-slate-500 mb-1">&nbsp;</label>
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+                        Simpan Transaksi
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Transaction History -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+                <h2 class="text-xl font-semibold text-slate-700">Riwayat Transaksi</h2>
+                <button onclick="exportData()" class="text-sm text-emerald-600 hover:text-emerald-800 font-medium">Download JSON</button>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 text-slate-500 text-xs uppercase tracking-wider">
+                            <th class="p-4 font-semibold">Tanggal</th>
+                            <th class="p-4 font-semibold">Tipe</th>
+                            <th class="p-4 font-semibold">Barang</th>
+                            <th class="p-4 font-semibold text-right">Qty</th>
+                            <th class="p-4 font-semibold text-right">Harga</th>
+                            <th class="p-4 font-semibold text-right">Total</th>
+                            <th class="p-4 font-semibold text-center">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionList" class="divide-y divide-slate-100 text-sm">
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="emptyState" class="p-8 text-center text-slate-400 hidden">
+                Belum ada transaksi. Mulai catat sekarang!
+            </div>
+        </div>
+
+        <footer class="mt-12 text-center text-slate-400 text-sm pb-8">
+            &copy; 2026 CindoLab - Sistem Pembukuan Sederhana
+        </footer>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Data simulasi
-            const months = [
-                'Januari 2026', 'Februari 2026', 'Maret 2026', 'April 2026', 'Mei 2026', 'Juni 2026',
-                'Juli 2026', 'Agustus 2026', 'September 2026', 'Oktober 2026', 'November 2026', 'Desember 2026'
-            ];
-            const reversedMonths = [
-                'Januari 2026', 'Februari 2026', 'Maret 2026', 'April 2026', 'Mei 2026', 'Juni 2026',
-                'Juli 2026', 'Agustus 2026', 'September 2026', 'Oktober 2026', 'November 2026', 'Desember 2026
-            ];
-            let modal = 20; // Modal awal Januari 2026
+        // --- State Management ---
+        let transactions = JSON.parse(localStorage.getItem('agarbook_transactions')) || [];
 
-            // Array untuk menyimpan data tabel
-            const data = [
-                {
-                    bulan: 'Januari 2026',
-                    iterasi: 0,
-                    nilaiAwal: modal,
-                    pertumbuhan: modal,
-                    penjumlahan: `$${modal.toFixed(0)} + $${modal.toFixed(0)} = $${(modal * 2).toFixed(0)}`,
-                    nilaiAkhir: modal * 2,
-                    kontribusi: '50%'
-                }
-            ];
+        // --- DOM Elements ---
+        const form = document.getElementById('transactionForm');
+        const transactionList = document.getElementById('transactionList');
+        const emptyState = document.getElementById('emptyState');
+        const totalSalesEl = document.getElementById('totalSales');
+        const totalPurchasesEl = document.getElementById('totalPurchases');
+        const netProfitEl = document.getElementById('netProfit');
 
-            modal = modal * 2; // Update modal setelah iterasi 0
-            for (let i = 1; i < months.length; i++) {
-                const nilaiAwal = modal;
-                const pertumbuhan = nilaiAwal;
-                const nilaiAkhir = nilaiAwal * 2;
-                data.push({
-                    bulan: months[i],
-                    iterasi: i,
-                    nilaiAwal: nilaiAwal,
-                    pertumbuhan: pertumbuhan,
-                    penjumlahan: `$${nilaiAwal.toFixed(0)} + $${pertumbuhan.toFixed(0)} = $${nilaiAkhir.toFixed(0)}`,
-                    nilaiAkhir: nilaiAkhir,
-                    kontribusi: '50%'
-                });
-                modal = nilaiAkhir;
-            }
+        // --- Initialization ---
+        dayjs.locale('id');
+        document.getElementById('date').valueAsDate = new Date(); // Set default date to today
+        render();
 
-            // Balik urutan data untuk tabel
-            const reversedData = data.reverse();
+        // --- Event Listeners ---
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const date = document.getElementById('date').value;
+            const type = document.querySelector('input[name="type"]:checked').value;
+            const item = document.getElementById('item').value;
+            const qty = parseFloat(document.getElementById('qty').value);
+            const price = parseFloat(document.getElementById('price').value);
 
-            // Fungsi untuk render tabel
-            function renderTable(dataToRender) {
-                const tbody = document.querySelector('#tradingTable tbody');
-                tbody.innerHTML = '';
-                dataToRender.forEach((row, index) => {
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td><span class="badge-bulan">${reversedMonths[index]}</span></td>
-                        <td><span class="badge-iterasi">${row.iterasi}</span></td>
-                        <td><span class="badge-nilaiAwal">$${row.nilaiAwal.toFixed(0)}</span></td>
-                        <td><span class="badge-pertumbuhan">$${row.pertumbuhan.toFixed(0)}</span></td>
-                        <td><span class="badge-penjumlahan">${row.penjumlahan}</span></td>
-                        <td><span class="badge-nilaiAkhir">$${row.nilaiAkhir.toFixed(0)}</span></td>
-                        <td><span class="badge-kontribusi">${row.kontribusi}</span></td>
-                    `;
-                    tbody.appendChild(tr);
-                });
-            }
+            const newTransaction = {
+                id: Date.now(),
+                date,
+                type,
+                item,
+                qty,
+                price,
+                total: qty * price
+            };
 
-            // Render tabel awal
-            renderTable(reversedData);
-
-            // Fungsi sorting
-            let sortDirection = {};
-            document.querySelectorAll('th[data-sort]').forEach(header => {
-                header.addEventListener('click', () => {
-                    const sortKey = header.getAttribute('data-sort');
-                    const isAscending = sortDirection[sortKey] !== 'asc';
-                    sortDirection[sortKey] = isAscending ? 'asc' : 'desc';
-
-                    // Hapus indikator sort dari semua header
-                    document.querySelectorAll('th').forEach(th => {
-                        th.classList.remove('sort-asc', 'sort-desc');
-                    });
-                    // Tambahkan indikator sort ke header yang diklik
-                    header.classList.add(isAscending ? 'sort-asc' : 'sort-desc');
-
-                    // Urutkan data
-                    const sortedData = [...reversedData].sort((a, b) => {
-                        let valueA = a[sortKey];
-                        let valueB = b[sortKey];
-
-                        // Konversi ke number untuk kolom numerik
-                        if (sortKey === 'nilaiAwal' || sortKey === 'pertumbuhan' || sortKey === 'nilaiAkhir') {
-                            valueA = parseFloat(valueA);
-                            valueB = parseFloat(valueB);
-                        } else if (sortKey === 'kontribusi') {
-                            valueA = parseFloat(valueA.replace('%', ''));
-                            valueB = parseFloat(valueB.replace('%', ''));
-                        }
-
-                        if (isAscending) {
-                            return valueA > valueB ? 1 : -1;
-                        } else {
-                            return valueA < valueB ? 1 : -1;
-                        }
-                    });
-
-                    renderTable(sortedData);
-                });
-            });
-
-            // Fungsi filter
-            document.getElementById('filterInput').addEventListener('input', (e) => {
-                const filterText = e.target.value.toLowerCase();
-                const filteredData = reversedData.filter(row => row.bulan.toLowerCase().includes(filterText));
-                renderTable(filteredData);
-            });
+            transactions.unshift(newTransaction); // Add to top
+            save();
+            render();
+            form.reset();
+            document.getElementById('date').valueAsDate = new Date(); // Reset date
+            document.getElementById('item').value = "Agar-agar Bubuk"; // Reset item
         });
+
+        // --- Functions ---
+        function save() {
+            localStorage.setItem('agarbook_transactions', JSON.stringify(transactions));
+        }
+
+        function deleteTransaction(id) {
+            if(confirm('Hapus transaksi ini?')) {
+                transactions = transactions.filter(t => t.id !== id);
+                save();
+                render();
+            }
+        }
+
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(number);
+        }
+
+        function render() {
+            // Render List
+            transactionList.innerHTML = '';
+            if (transactions.length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                transactions.forEach(t => {
+                    const tr = document.createElement('tr');
+                    const isSell = t.type === 'sell';
+                    const typeClass = isSell ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800';
+                    const typeLabel = isSell ? 'Penjualan' : 'Pembelian';
+                    const totalColor = isSell ? 'text-emerald-600' : 'text-red-600';
+                    const totalPrefix = isSell ? '+' : '-';
+
+                    tr.innerHTML = `
+                        <td class="p-4 whitespace-nowrap text-slate-600">${dayjs(t.date).format('DD MMM YYYY')}</td>
+                        <td class="p-4"><span class="px-2 py-1 rounded-full text-xs font-semibold ${typeClass}">${typeLabel}</span></td>
+                        <td class="p-4 font-medium text-slate-700">${t.item}</td>
+                        <td class="p-4 text-right text-slate-600">${t.qty}</td>
+                        <td class="p-4 text-right text-slate-600">${formatRupiah(t.price)}</td>
+                        <td class="p-4 text-right font-bold ${totalColor}">${totalPrefix} ${formatRupiah(t.total)}</td>
+                        <td class="p-4 text-center">
+                            <button onclick="deleteTransaction(${t.id})" class="text-slate-400 hover:text-red-500 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </td>
+                    `;
+                    transactionList.appendChild(tr);
+                });
+            }
+
+            // Calculate Summary
+            const sales = transactions.filter(t => t.type === 'sell').reduce((sum, t) => sum + t.total, 0);
+            const purchases = transactions.filter(t => t.type === 'buy').reduce((sum, t) => sum + t.total, 0);
+            const profit = sales - purchases;
+
+            totalSalesEl.textContent = formatRupiah(sales);
+            totalPurchasesEl.textContent = formatRupiah(purchases);
+            netProfitEl.textContent = formatRupiah(profit);
+            
+            // Profit Color Logic
+            if (profit > 0) {
+                netProfitEl.className = "text-2xl font-bold text-emerald-600";
+            } else if (profit < 0) {
+                netProfitEl.className = "text-2xl font-bold text-red-600";
+            } else {
+                netProfitEl.className = "text-2xl font-bold text-blue-600";
+            }
+        }
+
+        function exportData() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(transactions));
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", "pembukuan_agar_agar.json");
+            document.body.appendChild(downloadAnchorNode); // required for firefox
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+        }
     </script>
 </body>
 </html>
