@@ -72,12 +72,12 @@
 
         @media print {
             body * {
-                visibility: hidden;
+                display: none;
             }
 
             #receipt-area,
             #receipt-area * {
-                visibility: visible;
+                display: block;
             }
 
             #receipt-area {
@@ -88,6 +88,11 @@
                 color: black;
                 background: white;
                 padding: 10px;
+            }
+
+            #receipt-items div {
+                display: flex !important;
+                justify-content: space-between;
             }
         }
     </style>
@@ -683,6 +688,17 @@
 
         function editStock(id) {
             openAddProductModal(id);
+        }
+
+        function deleteStock(id) {
+            if (confirm('Yakin ingin menghapus barang ini? Stok akan hilang permanen.')) {
+                const index = inventory.findIndex(i => i.id === id);
+                if (index !== -1) {
+                    inventory.splice(index, 1);
+                    saveData();
+                    renderInventory();
+                }
+            }
         }
 
         function closeProductModal() {
