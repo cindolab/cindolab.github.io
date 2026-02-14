@@ -165,6 +165,14 @@
                 </svg>
                 Riwayat
             </button>
+            <button onclick="showSection('resep')"
+                class="nav-btn w-full text-left px-4 py-3 rounded-xl text-slate-400 hover:bg-white/5 hover:text-white transition-all flex items-center gap-3">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                Resep Agar-Agar
+            </button>
         </nav>
 
         <div class="mt-auto pt-6 border-t border-slate-700/50">
@@ -368,7 +376,66 @@
             </div>
         </section>
 
+        <!-- SECTION: RESEP -->
+        <section id="resep" class="hidden space-y-6">
+            <header class="mb-4">
+                <h2 class="text-3xl font-bold text-white">Resep Inspirasi</h2>
+                <p class="text-slate-400">Aneka kreasi lezat berbahan dasar agar-agar.</p>
+            </header>
+
+            <div id="recipeGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Recipe Cards will be injected here -->
+            </div>
+        </section>
+
     </main>
+
+    <!-- MODAL: RECIPE DETAIL -->
+    <div id="recipeModal"
+        class="fixed inset-0 z-[60] bg-black/80 hidden backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-0 shadow-2xl scale-95 opacity-0 transition-all duration-300 transform"
+            id="recipeModalContent">
+            <div class="relative h-48 bg-indigo-900 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                <!-- Abstract food pattern using CSS -->
+                <div class="absolute inset-0 opacity-30 pattern-dots"></div>
+                <button onclick="closeRecipeModal()"
+                    class="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div class="absolute bottom-4 left-6">
+                    <span
+                        class="bg-indigo-500 text-white text-xs font-bold px-2 py-1 rounded-md mb-2 inline-block">FAVORIT</span>
+                    <h3 id="recipeTitle" class="text-2xl font-bold text-white">Judul Resep</h3>
+                </div>
+            </div>
+            <div class="p-6 space-y-6">
+                <div>
+                    <h4 class="text-lg font-bold text-indigo-400 mb-3 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                        Bahan-bahan
+                    </h4>
+                    <ul id="recipeIngredients" class="list-disc list-inside text-slate-300 space-y-1 ml-1"></ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-indigo-400 mb-3 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                        Cara Membuat
+                    </h4>
+                    <ol id="recipeSteps" class="list-decimal list-inside text-slate-300 space-y-2 ml-1"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- MODAL: ADD PRODUCT/STOCK -->
     <div id="productModal"
@@ -444,6 +511,140 @@
         let transactions = JSON.parse(localStorage.getItem('cindolab_transactions')) || [];
         let cart = [];
 
+        // --- RECIPES ---
+        const recipes = [
+            {
+                id: 1,
+                title: 'Puding Coklat Lava',
+                desc: 'Puding coklat lembut dengan lelehan vla di tengahnya.',
+                color: 'from-amber-700 to-orange-900',
+                ingredients: [
+                    '1 bungkus Agar-agar Bubuk Coklat',
+                    '700 ml Susu Cair Coklat',
+                    '150 gr Gula Pasir',
+                    '50 gr Dark Chocolate (lelehkan)',
+                    'Vla Vanila secukupnya'
+                ],
+                steps: [
+                    'Campurkan agar-agar, gula, dan susu cair dalam panci.',
+                    'Masak dengan api sedang sambil diaduk terus hingga mendidih.',
+                    'Masukkan dark chocolate leleh, aduk rata hingga larut.',
+                    'Tuang ke dalam cetakan, biarkan setengah dingin.',
+                    'Sajikan dengan siraman vla vanila di atasnya.'
+                ]
+            },
+            {
+                id: 2,
+                title: 'Agar-Agar Santan Gula Merah',
+                desc: 'Cita rasa tradisional yang manis dan gurih, favorit keluarga.',
+                color: 'from-orange-500 to-red-700',
+                ingredients: [
+                    '1 bungkus Agar-agar Bubuk Putih',
+                    '200 gr Gula Merah (sisir)',
+                    '800 ml Santan Kekentalan Sedang',
+                    '1 lembar Daun Pandan',
+                    'Sejumput Garam'
+                ],
+                steps: [
+                    'Rebus gula merah dengan sedikit air hingga larut, saring.',
+                    'Campurkan air gula merah, santan, agar-agar, dan garam.',
+                    'Masak sambil diaduk agar santan tidak pecah.',
+                    'Masukkan daun pandan simpul.',
+                    'Setelah mendidih, angkat dan tuang ke cetakan. Biarkan mengeras (akan terbentuk lapisan santan alami).'
+                ]
+            },
+            {
+                id: 3,
+                title: 'Puding Buah Kaca',
+                desc: 'Tampilan cantik transparan dengan potongan buah segar.',
+                color: 'from-pink-500 to-rose-600',
+                ingredients: [
+                    '1 bungkus Agar-agar Bubuk Putih/Plain',
+                    '600 ml Air',
+                    '120 gr Gula Pasir',
+                    'Buah Potong (Strawberry, Kiwi, Jeruk, Anggur)',
+                    '1 sdt Biji Selasih (rendam air hangat)'
+                ],
+                steps: [
+                    'Tata potongan buah segar di dasar cetakan puding.',
+                    'Masak agar-agar, air, dan gula hingga mendidih.',
+                    'Matikan api, tunggu uap panas hilang (suam-suam kuku).',
+                    'Tuang perlahan ke atas buah agar buah tidak mengapung berantakan.',
+                    'Dinginkan di kulkas hingga set. Potong dan sajikan dingin.'
+                ]
+            },
+            {
+                id: 4,
+                title: 'Es Agar-Agar Serut',
+                desc: 'Minuman segar dengan tekstur agar yang unik, cocok untuk cuaca panas.',
+                color: 'from-cyan-500 to-blue-600',
+                ingredients: [
+                    '1 bungkus Agar-agar Bubuk Hijau/Merah',
+                    '700 ml Air',
+                    '100 gr Gula Pasir',
+                    'Sirup Cocopandan',
+                    'Es Batu & Susu Kental Manis'
+                ],
+                steps: [
+                    'Masak agar-agar seperti biasa hingga mendidih, biarkan mengeras di wadah datar.',
+                    'Setelah keras, parut kasar memanjang menggunakan parutan keju.',
+                    'Siapkan gelas, masukkan es batu, agar-agar serut, dan sirup.',
+                    'Tambahkan air dan susu kental manis sesuai selera.',
+                    'Aduk rata dan sajikan segera.'
+                ]
+            }
+        ];
+
+        function renderRecipes() {
+            const grid = document.getElementById('recipeGrid');
+            grid.innerHTML = '';
+            recipes.forEach(r => {
+                const card = document.createElement('div');
+                card.className = 'glass-panel overflow-hidden rounded-2xl group cursor-pointer hover:border-indigo-500/50 transition-all';
+                card.onclick = () => openRecipeModal(r);
+                card.innerHTML = `
+                    <div class="h-32 bg-gradient-to-br ${r.color} relative">
+                         <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
+                         <div class="absolute bottom-4 left-4">
+                            <h3 class="text-lg font-bold text-white shadow-black drop-shadow-md">${r.title}</h3>
+                         </div>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-slate-400 text-sm line-clamp-2">${r.desc}</p>
+                        <div class="mt-4 flex items-center text-indigo-400 text-xs font-bold gap-1 group-hover:gap-2 transition-all">
+                            LIHAT RESEP
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openRecipeModal(recipe) {
+            document.getElementById('recipeTitle').innerText = recipe.title;
+
+            const ingList = document.getElementById('recipeIngredients');
+            ingList.innerHTML = recipe.ingredients.map(i => `<li>${i}</li>`).join('');
+
+            const stepList = document.getElementById('recipeSteps');
+            stepList.innerHTML = recipe.steps.map(s => `<li>${s}</li>`).join('');
+
+            document.getElementById('recipeModal').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('recipeModalContent').classList.remove('scale-95', 'opacity-0');
+                document.getElementById('recipeModalContent').classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeRecipeModal() {
+            document.getElementById('recipeModalContent').classList.add('scale-95', 'opacity-0');
+            document.getElementById('recipeModalContent').classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => {
+                document.getElementById('recipeModal').classList.add('hidden');
+            }, 300);
+        }
+
         // --- CHART INSTANCE ---
         let salesChart = null;
 
@@ -455,6 +656,7 @@
             renderHistory();
             updateDashboard();
             initChart();
+            renderRecipes();
 
             // Initial Section
             showSection('dashboard');
