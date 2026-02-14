@@ -173,6 +173,14 @@
                 </svg>
                 Resep Agar-Agar
             </button>
+            <button onclick="showSection('pelanggan')"
+                class="nav-btn w-full text-left px-4 py-3 rounded-xl text-slate-400 hover:bg-white/5 hover:text-white transition-all flex items-center gap-3">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                Pelanggan
+            </button>
         </nav>
 
         <div class="mt-auto pt-6 border-t border-slate-700/50">
@@ -388,7 +396,84 @@
             </div>
         </section>
 
+        <!-- SECTION: PELANGGAN -->
+        <section id="pelanggan" class="hidden space-y-6">
+            <header class="flex justify-between items-end mb-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-white">Daftar Pelanggan</h2>
+                    <p class="text-slate-400">Kelola data pelanggan dan kontak.</p>
+                </div>
+                <button onclick="openCustomerModal()"
+                    class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-xl transition-colors font-bold shadow-lg shadow-indigo-500/20 flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                    Tambah Pelanggan
+                </button>
+            </header>
+
+            <div class="glass-panel overflow-hidden rounded-2xl">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-800/50 text-slate-400 uppercase text-xs">
+                        <tr>
+                            <th class="p-5 font-semibold">Nama Pelanggan</th>
+                            <th class="p-5 font-semibold">Alamat (Toko/Rumah)</th>
+                            <th class="p-5 font-semibold">Kontak</th>
+                            <th class="p-5 font-semibold text-center">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customerTable" class="divide-y divide-slate-700/50 text-sm">
+                        <!-- Customer Rows -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
     </main>
+
+    <!-- MODAL: ADD CUSTOMER -->
+    <div id="customerModal"
+        class="fixed inset-0 z-[60] bg-black/80 hidden backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 shadow-2xl scale-95 opacity-0 transition-all duration-300 transform"
+            id="customerModalContent">
+            <h3 class="text-xl font-bold text-white mb-6">Data Pelanggan</h3>
+            <form id="customerForm" class="space-y-4">
+                <input type="hidden" id="custId">
+                <div>
+                    <label class="block text-xs uppercase text-slate-500 font-bold mb-2">Nama Lengkap</label>
+                    <input type="text" id="custName" required
+                        class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                        placeholder="Contoh: Budi Santoso">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-slate-500 font-bold mb-2">Alamat </label>
+                    <textarea id="custAddress" required rows="2"
+                        class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                        placeholder="Alamat Toko / Rumah"></textarea>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs uppercase text-slate-500 font-bold mb-2">WhatsApp</label>
+                        <input type="text" id="custWA"
+                            class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            placeholder="628xxx">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase text-slate-500 font-bold mb-2">Telegram</label>
+                        <input type="text" id="custTele"
+                            class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            placeholder="Username / No.HP">
+                    </div>
+                </div>
+                <div class="pt-4 flex gap-3">
+                    <button type="button" onclick="closeCustomerModal()"
+                        class="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl transition-colors font-bold">Batal</button>
+                    <button type="submit"
+                        class="flex-1 bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white py-3 rounded-xl transition-all font-bold shadow-lg shadow-indigo-500/25">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- MODAL: RECIPE DETAIL -->
     <div id="recipeModal"
@@ -509,6 +594,7 @@
         inventory = inventory.map(i => ({ ...i, buyPrice: i.buyPrice || (i.price * 0.7) }));
 
         let transactions = JSON.parse(localStorage.getItem('cindolab_transactions')) || [];
+        let customers = JSON.parse(localStorage.getItem('cindolab_customers')) || [];
         let cart = [];
 
         // --- RECIPES ---
@@ -654,9 +740,8 @@
             renderInventory();
             renderProductGrid();
             renderHistory();
-            updateDashboard();
-            initChart();
             renderRecipes();
+            renderCustomers();
 
             // Initial Section
             showSection('dashboard');
@@ -1017,8 +1102,103 @@
             }
         }
 
+        // --- CUSTOMERS ---
+        function renderCustomers() {
+            const tbody = document.getElementById('customerTable');
+            tbody.innerHTML = '';
+
+            customers.forEach(c => {
+                const waLink = c.wa ? `https://wa.me/${c.wa.replace(/^0/, '62').replace(/\D/g, '')}` : '#';
+                const teleLink = c.tele ? `https://t.me/${c.tele.replace('@', '')}` : '#';
+
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-white/5 transition-colors';
+                tr.innerHTML = `
+                    <td class="p-5 font-medium text-slate-200">${c.name}</td>
+                    <td class="p-5 text-slate-400">${c.address}</td>
+                    <td class="p-5 flex gap-2">
+                        ${c.wa ? `<a href="${waLink}" target="_blank" class="bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500 hover:text-white p-2 rounded-lg transition-colors" title="Chat WhatsApp"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>` : ''}
+                        ${c.tele ? `<a href="${teleLink}" target="_blank" class="bg-sky-500/20 text-sky-400 hover:bg-sky-500 hover:text-white p-2 rounded-lg transition-colors" title="Chat Telegram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>` : ''}
+                    </td>
+                    <td class="p-5 text-center px-2 flex justify-center gap-2">
+                         <button onclick="editCustomer(${c.id})" class="text-slate-500 hover:text-indigo-400 transition-colors" title="Edit">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
+                         </button>
+                         <button onclick="deleteCustomer(${c.id})" class="text-slate-500 hover:text-rose-400 transition-colors" title="Hapus">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                         </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function openCustomerModal(editId = null) {
+            document.getElementById('customerForm').reset();
+            document.getElementById('custId').value = '';
+
+            if (editId) {
+                const c = customers.find(c => c.id === editId);
+                if (c) {
+                    document.getElementById('custId').value = c.id;
+                    document.getElementById('custName').value = c.name;
+                    document.getElementById('custAddress').value = c.address;
+                    document.getElementById('custWA').value = c.wa;
+                    document.getElementById('custTele').value = c.tele;
+                }
+            }
+
+            document.getElementById('customerModal').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('customerModalContent').classList.remove('scale-95', 'opacity-0');
+                document.getElementById('customerModalContent').classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function editCustomer(id) {
+            openCustomerModal(id);
+        }
+
+        function deleteCustomer(id) {
+            if (confirm('Hapus pelanggan ini?')) {
+                customers = customers.filter(c => c.id !== id);
+                saveData();
+                renderCustomers();
+            }
+        }
+
+        function closeCustomerModal() {
+            document.getElementById('customerModalContent').classList.add('scale-95', 'opacity-0');
+            document.getElementById('customerModalContent').classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => {
+                document.getElementById('customerModal').classList.add('hidden');
+            }, 300);
+        }
+
+        document.getElementById('customerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const id = document.getElementById('custId').value;
+            const name = document.getElementById('custName').value;
+            const address = document.getElementById('custAddress').value;
+            const wa = document.getElementById('custWA').value;
+            const tele = document.getElementById('custTele').value;
+
+            if (id) {
+                const index = customers.findIndex(c => c.id == id);
+                if (index !== -1) customers[index] = { ...customers[index], name, address, wa, tele };
+            } else {
+                customers.push({ id: Date.now(), name, address, wa, tele });
+            }
+
+            saveData();
+            renderCustomers();
+            closeCustomerModal();
+        });
+
         // --- DASHBOARD & CHARTS ---
         function updateDashboard() {
+            if (!salesChart) initChart(); // Ensure chart is initialized if not already
+
             let totalSales = 0;
             let totalCost = 0;
             let totalProfit = 0;
@@ -1128,6 +1308,7 @@
         function saveData() {
             localStorage.setItem('cindolab_inventory', JSON.stringify(inventory));
             localStorage.setItem('cindolab_transactions', JSON.stringify(transactions));
+            localStorage.setItem('cindolab_customers', JSON.stringify(customers)); // New
         }
 
         function formatRupiah(number) {
