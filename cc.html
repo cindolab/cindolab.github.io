@@ -186,8 +186,8 @@
     <div class="container-custom" style="display: block; margin-bottom: 40px; text-align: center;" data-aos="zoom-in">
         <div class="mnemonic-card" style="display: block; width: 100%; max-width: 800px; margin: 0 auto; padding: 20px;">
             <h2 style="color: var(--hocindo-blue); margin-bottom: 20px;">Diagram Visual Candlestick</h2>
-            <img src="tabrani_diagram_id.png" alt="Diagram Candlestick TABRANI" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <p style="margin-top: 15px; color: #666; font-style: italic;">Visualisasi komponen Harga Tertinggi, Atas, Bawah, Rendah, Awal, Nilai, dan Inti.</p>
+            <img src="tabrani_diagram_final.png" alt="Diagram Candlestick TABRANI" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <p style="margin-top: 15px; color: #666; font-style: italic;">Visualisasi Mnemonic TABRANI: Tinggi, Atas, Bawah, Rendah, Awal, Nilai, dan Inti.</p>
         </div>
     </div>
 
@@ -197,8 +197,8 @@
             <div class="card-letter">T</div>
             <div class="card-arti">Tinggi</div>
             <div class="card-icon"><i class="fas fa-arrow-up"></i></div>
-            <p class="card-penjelasan">Mempresentasikan harga tertinggi yang dicapai selama periode waktu candlestick tersebut terbentuk.</p>
-            <div class="card-praktis">Puncak bayangan atas (High)</div>
+            <p class="card-penjelasan">Harga tertinggi (High) yang dicapai sesi perdagangan.</p>
+            <div class="card-praktis">Puncak atas candle</div>
         </div>
 
         <!-- A -->
@@ -206,8 +206,8 @@
             <div class="card-letter">A</div>
             <div class="card-arti">Atas</div>
             <div class="card-icon"><i class="fas fa-level-up-alt"></i></div>
-            <p class="card-penjelasan">Shadow atau ekor bagian atas yang menunjukkan adanya penolakan harga dari pihak penjual.</p>
-            <div class="card-praktis">Area tekanan jual (Wick Atas)</div>
+            <p class="card-penjelasan">Shadow/ekor atas (Upper Wick).</p>
+            <div class="card-praktis">Tekanan jual di atas</div>
         </div>
 
         <!-- B -->
@@ -215,8 +215,8 @@
             <div class="card-letter">B</div>
             <div class="card-arti">Bawah</div>
             <div class="card-icon"><i class="fas fa-level-down-alt"></i></div>
-            <p class="card-penjelasan">Shadow atau ekor bagian bawah yang menunjukkan adanya tekanan beli dari pihak pembeli.</p>
-            <div class="card-praktis">Area tekanan beli (Wick Bawah)</div>
+            <p class="card-penjelasan">Shadow/ekor bawah (Lower Wick).</p>
+            <div class="card-praktis">Tekanan beli di bawah</div>
         </div>
 
         <!-- R -->
@@ -224,8 +224,8 @@
             <div class="card-letter">R</div>
             <div class="card-arti">Rendah</div>
             <div class="card-icon"><i class="fas fa-arrow-down"></i></div>
-            <p class="card-penjelasan">Mempresentasikan harga terendah yang dicapai selama periode waktu candlestick tersebut terbentuk.</p>
-            <div class="card-praktis">Dasar bayangan bawah (Low)</div>
+            <p class="card-penjelasan">Harga terendah (Low) yang dicapai sesi perdagangan.</p>
+            <div class="card-praktis">Dasar candle</div>
         </div>
 
         <!-- A -->
@@ -233,8 +233,8 @@
             <div class="card-letter">A</div>
             <div class="card-arti">Awal</div>
             <div class="card-icon"><i class="fas fa-flag-checkered"></i></div>
-            <p class="card-penjelasan">Harga pembukaan di mana sesi perdagangan dimulai pada time frame yang dipilih.</p>
-            <div class="card-praktis">Titik pembentukan awal (Open)</div>
+            <p class="card-penjelasan">Harga pembukaan (Open).</p>
+            <div class="card-praktis">Titik start sesi</div>
         </div>
 
         <!-- N -->
@@ -242,8 +242,8 @@
             <div class="card-letter">N</div>
             <div class="card-arti">Nilai</div>
             <div class="card-icon"><i class="fas fa-vector-square"></i></div>
-            <p class="card-penjelasan">Body atau Tubuh candlestick yang mengukur seberapa kuat dominasi pembeli atau penjual.</p>
-            <div class="card-praktis">Volume transaksi nyata (Body)</div>
+            <p class="card-penjelasan">Body / Tubuh lilin (Real Body).</p>
+            <div class="card-praktis">Kekuatan nyata buyer/seller</div>
         </div>
 
         <!-- I -->
@@ -251,8 +251,8 @@
             <div class="card-letter">I</div>
             <div class="card-arti">Inti</div>
             <div class="card-icon"><i class="fas fa-bullseye"></i></div>
-            <p class="card-penjelasan">Harga penutupan pada akhir sesi, serta mencakup pergerakan harga inti yang sedang berjalan.</p>
-            <div class="card-praktis">Hasil akhir & harga saat ini (Close)</div>
+            <p class="card-penjelasan">Harga Penutupan (Close).</p>
+            <div class="card-praktis">Nilai akhir sesi</div>
         </div>
     </div>
 
@@ -265,52 +265,52 @@
                     <tr style="border-bottom: 2px solid var(--hocindo-blue);">
                         <th style="padding: 12px; text-align: center;">Huruf</th>
                         <th style="padding: 12px; text-align: left;">Arti</th>
-                        <th style="padding: 12px; text-align: left;">Keterangan Teknis</th>
-                        <th style="padding: 12px; text-align: left;">Interpretasi Pasar</th>
+                        <th style="padding: 12px; text-align: left;">Penjelasan Lengkap (Candlestick)</th>
+                        <th style="padding: 12px; text-align: left;">Arti Praktis di Chart</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr style="border-bottom: 1px solid #eee;">
                         <td style="padding: 12px; text-align: center; font-weight: bold; color: var(--hocindo-blue);">T</td>
                         <td style="padding: 12px; font-weight: 600;">Tinggi</td>
-                        <td style="padding: 12px;">High Price (Harga Tertinggi)</td>
-                        <td style="padding: 12px; color: #2e7d32;">Batas atas kenaikan harga</td>
+                        <td style="padding: 12px;">Harga tertinggi (High)</td>
+                        <td style="padding: 12px; color: #2e7d32;">Puncak atas candle</td>
                     </tr>
                     <tr style="border-bottom: 1px solid #eee;">
                         <td style="padding: 12px; text-align: center; font-weight: bold; color: var(--hocindo-blue);">A</td>
                         <td style="padding: 12px; font-weight: 600;">Atas</td>
-                        <td style="padding: 12px;">Upper Wick (Ekor Atas)</td>
-                        <td style="padding: 12px; color: #2e7d32;">Tekanan jual yang kuat di harga tinggi</td>
+                        <td style="padding: 12px;">Shadow/ekor atas (Upper Wick)</td>
+                        <td style="padding: 12px; color: #2e7d32;">Tekanan jual di atas</td>
                     </tr>
                     <tr style="border-bottom: 1px solid #eee;">
                         <td style="padding: 12px; text-align: center; font-weight: bold; color: var(--hocindo-blue);">B</td>
                         <td style="padding: 12px; font-weight: 600;">Bawah</td>
-                        <td style="padding: 12px;">Lower Wick (Ekor Bawah)</td>
-                        <td style="padding: 12px; color: #2e7d32;">Tekanan beli yang kuat di harga rendah</td>
+                        <td style="padding: 12px;">Shadow/ekor bawah (Lower Wick)</td>
+                        <td style="padding: 12px; color: #2e7d32;">Tekanan beli di bawah</td>
                     </tr>
                     <tr style="border-bottom: 1px solid #eee;">
                         <td style="padding: 12px; text-align: center; font-weight: bold; color: var(--hocindo-blue);">R</td>
                         <td style="padding: 12px; font-weight: 600;">Rendah</td>
-                        <td style="padding: 12px;">Low Price (Harga Terendah)</td>
-                        <td style="padding: 12px; color: #2e7d32;">Batas bawah penurunan harga</td>
+                        <td style="padding: 12px;">Harga terendah (Low)</td>
+                        <td style="padding: 12px; color: #2e7d32;">Dasar candle</td>
                     </tr>
                     <tr style="border-bottom: 1px solid #eee;">
                         <td style="padding: 12px; text-align: center; font-weight: bold; color: var(--hocindo-blue);">A</td>
                         <td style="padding: 12px; font-weight: 600;">Awal</td>
-                        <td style="padding: 12px;">Open Price (Harga Buka)</td>
-                        <td style="padding: 12px; color: #2e7d32;">Titik start psikologi pasar</td>
+                        <td style="padding: 12px;">Harga pembukaan (Open)</td>
+                        <td style="padding: 12px; color: #2e7d32;">Titik start sesi</td>
                     </tr>
                     <tr style="border-bottom: 1px solid #eee;">
                         <td style="padding: 12px; text-align: center; font-weight: bold; color: var(--hocindo-blue);">N</td>
                         <td style="padding: 12px; font-weight: 600;">Nilai</td>
-                        <td style="padding: 12px;">Real Body (Tubuh Candle)</td>
-                        <td style="padding: 12px; color: #2e7d32;">Momentum dan kekuatan dominasi</td>
+                        <td style="padding: 12px;">Body / Tubuh lilin (Real Body)</td>
+                        <td style="padding: 12px; color: #2e7d32;">Kekuatan nyata buyer/seller</td>
                     </tr>
                     <tr style="border-bottom: 1px solid #eee;">
                         <td style="padding: 12px; text-align: center; font-weight: bold; color: var(--hocindo-blue);">I</td>
                         <td style="padding: 12px; font-weight: 600;">Inti</td>
-                        <td style="padding: 12px;">Close Price (Harga Tutup)</td>
-                        <td style="padding: 12px; color: #2e7d32;">Keputusan akhir pasar sesi ini</td>
+                        <td style="padding: 12px;">Harga Penutupan (Close)</td>
+                        <td style="padding: 12px; color: #2e7d32;">Nilai akhir sesi</td>
                     </tr>
                 </tbody>
             </table>
