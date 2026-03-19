@@ -3,145 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Akronim TABRANI - Mnemonic Lengkap untuk Memahami Candlestick dalam Trading.">
     <title>Akronim TABRANI - Candlestick/Bidak Trading</title>
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="cindo.svg" type="image/svg+xml">
+
     <style>
+        :root {
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            padding: 20px;
-            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            padding-top: 100px; /* Space for fixed navbar if added later */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        h1 {
+
+        .hero-mini {
             text-align: center;
-            color: #1e88e5;
-            margin-bottom: 10px;
+            margin-bottom: 50px;
+            padding: 0 20px;
         }
-        p {
-            text-align: center;
-            color: #666;
-            font-size: 1.1em;
-            margin-bottom: 30px;
+
+        .hero-mini h1 {
+            font-size: clamp(32px, 6vw, 48px);
+            color: var(--hocindo-blue);
+            margin-bottom: 15px;
+            font-weight: 900;
+            letter-spacing: -1px;
         }
-        table {
-            width: 100%;
-            max-width: 1100px;
+
+        .hero-mini p {
+            font-size: clamp(16px, 3vw, 20px);
+            color: var(--dark-gray);
+            max-width: 600px;
             margin: 0 auto;
-            border-collapse: collapse;
-            background: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-radius: 12px;
+            line-height: 1.6;
+        }
+
+        .hero-mini .highlight {
+            color: var(--hocindo-gold);
+            font-weight: 700;
+        }
+
+        .container-custom {
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        .mnemonic-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
             overflow: hidden;
         }
-        th {
-            background-color: #1e88e5;
-            color: white;
-            padding: 16px 12px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.05em;
+
+        .mnemonic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 82, 255, 0.15);
+            border-color: var(--hocindo-blue);
         }
-        td {
-            padding: 14px 12px;
-            border-bottom: 1px solid #eee;
-            vertical-align: top;
+
+        .mnemonic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--hocindo-blue), var(--hocindo-gold));
         }
-        tr:nth-child(even) {
-            background-color: #f8fbff;
+
+        .card-letter {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--hocindo-blue);
+            margin-bottom: 10px;
+            line-height: 1;
         }
-        tr:hover {
-            background-color: #e3f2fd;
-            transition: 0.3s;
+
+        .card-arti {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--hocindo-gold);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .huruf {
-            font-size: 2em;
-            font-weight: bold;
-            color: #1e88e5;
-            text-align: center;
-            width: 80px;
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--hocindo-blue);
+            margin-bottom: 20px;
+            opacity: 0.8;
         }
-        .arti {
-            font-weight: 600;
-            color: #1565c0;
-        }
-        .penjelasan {
-            font-size: 0.95em;
+
+        .card-penjelasan {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
             line-height: 1.5;
+            flex-grow: 1;
         }
-        .praktis {
-            font-size: 0.95em;
-            line-height: 1.5;
+
+        .card-praktis {
+            font-size: 0.9rem;
             color: #2e7d32;
+            background: #e8f5e9;
+            padding: 10px 15px;
+            border-radius: 10px;
+            width: 100%;
+            font-weight: 500;
         }
-        .catatan {
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background: var(--hocindo-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 82, 255, 0.3);
+        }
+
+        .back-btn:hover {
+            background: var(--hocindo-blue-dark);
+            transform: scale(1.05);
+        }
+
+        .footer-note {
+            margin: 50px 0;
             text-align: center;
-            margin-top: 25px;
-            font-size: 0.9em;
             color: #777;
+            font-size: 0.9rem;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container-custom {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>AKRONIM TABRANI</h1>
-    <p><strong>Versi Benar</strong> — Mnemonic Lengkap untuk Memahami Candlestick</p>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Huruf</th>
-                <th>Arti</th>
-                <th>Penjelasan Lengkap (Candlestick)</th>
-                <th>Arti Praktis di Chart</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="huruf">T</td>
-                <td class="arti">Tinggi</td>
-                <td class="penjelasan">Harga tertinggi (High)</td>
-                <td class="praktis">Puncak atas candle</td>
-            </tr>
-            <tr>
-                <td class="huruf">A</td>
-                <td class="arti">Atas</td>
-                <td class="penjelasan">Shadow/ekor atas (Upper Wick)</td>
-                <td class="praktis">Tekanan jual di atas</td>
-            </tr>
-            <tr>
-                <td class="huruf">B</td>
-                <td class="arti">Bawah</td>
-                <td class="penjelasan">Shadow/ekor bawah (Lower Wick)</td>
-                <td class="praktis">Tekanan beli di bawah</td>
-            </tr>
-            <tr>
-                <td class="huruf">R</td>
-                <td class="arti">Rendah</td>
-                <td class="penjelasan">Harga terendah (Low)</td>
-                <td class="praktis">Dasar candle</td>
-            </tr>
-            <tr>
-                <td class="huruf">A</td>
-                <td class="arti">Awal</td>
-                <td class="penjelasan">Harga pembukaan (Open)</td>
-                <td class="praktis">Titik start sesi</td>
-            </tr>
-            <tr>
-                <td class="huruf">N</td>
-                <td class="arti">Nilai</td>
-                <td class="penjelasan">Body / Tubuh lilin (Real Body)</td>
-                <td class="praktis">Kekuatan nyata buyer/seller (besar/kecil + warna)</td>
-            </tr>
-            <tr>
-                <td class="huruf">I</td>
-                <td class="arti">Inti</td>
-                <td class="penjelasan">Harga Penutupan (Close) + harga saat ini (fluktuasi setiap detik)</td>
-                <td class="praktis">Nilai akhir sesi + acuan live price sekarang</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="catatan">
-        Copy-paste kode di atas ke file .html atau langsung ke editor HTML kamu.<br>
-        Cocok untuk trading chart (forex, crypto, saham). Semoga membantu analisis candlestick kamu!
+    <div class="hero-mini" data-aos="fade-down">
+        <h1>AKRONIM <span class="highlight">TABRANI</span></h1>
+        <p>Mnemonic Lengkap untuk Memahami Anatomi <span class="highlight">Candlestick</span> dalam Trading secara Profesional.</p>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
     </div>
+
+    <div class="container-custom">
+        <!-- T -->
+        <div class="mnemonic-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-letter">T</div>
+            <div class="card-arti">Tinggi</div>
+            <div class="card-icon"><i class="fas fa-arrow-up"></i></div>
+            <p class="card-penjelasan">Mempresentasikan harga tertinggi (High) yang dicapai selama sesi perdagangan tertentu.</p>
+            <div class="card-praktis">Titik puncak paling atas pada candle</div>
+        </div>
+
+        <!-- A -->
+        <div class="mnemonic-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-letter">A</div>
+            <div class="card-arti">Atas</div>
+            <div class="card-icon"><i class="fas fa-level-up-alt"></i></div>
+            <p class="card-penjelasan">Shadow atau ekor bagian atas (Upper Wick) yang menunjukkan tekanan jual di area tersebut.</p>
+            <div class="card-praktis">Area penolakan harga oleh seller</div>
+        </div>
+
+        <!-- B -->
+        <div class="mnemonic-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-letter">B</div>
+            <div class="card-arti">Bawah</div>
+            <div class="card-icon"><i class="fas fa-level-down-alt"></i></div>
+            <p class="card-penjelasan">Shadow atau ekor bagian bawah (Lower Wick) yang menunjukkan tekanan beli/support.</p>
+            <div class="card-praktis">Area penolakan harga oleh buyer</div>
+        </div>
+
+        <!-- R -->
+        <div class="mnemonic-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-letter">R</div>
+            <div class="card-arti">Rendah</div>
+            <div class="card-icon"><i class="fas fa-arrow-down"></i></div>
+            <p class="card-penjelasan">Mempresentasikan harga terendah (Low) yang dicapai selama sesi perdagangan.</p>
+            <div class="card-praktis">Dasar terendah pada candle</div>
+        </div>
+
+        <!-- A -->
+        <div class="mnemonic-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="card-letter">A</div>
+            <div class="card-arti">Awal</div>
+            <div class="card-icon"><i class="fas fa-flag-checkered"></i></div>
+            <p class="card-penjelasan">Harga pembukaan (Open) di mana sesi perdagangan dimulai untuk candle tersebut.</p>
+            <div class="card-praktis">Titik awal pertarungan harga</div>
+        </div>
+
+        <!-- N -->
+        <div class="mnemonic-card" data-aos="fade-up" data-aos-delay="600">
+            <div class="card-letter">N</div>
+            <div class="card-arti">Nilai</div>
+            <div class="card-icon"><i class="fas fa-vector-square"></i></div>
+            <p class="card-penjelasan">Body atau Tubuh lilin (Real Body) yang mengukur kekuatan dominasi buyer atau seller.</p>
+            <div class="card-praktis">Besarnya volume dan momentum pasar</div>
+        </div>
+
+        <!-- I -->
+        <div class="mnemonic-card" data-aos="fade-up" data-aos-delay="700">
+            <div class="card-letter">I</div>
+            <div class="card-arti">Inti</div>
+            <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+            <p class="card-penjelasan">Harga Penutupan (Close) serta harga saat ini (Live Price) yang fluktuatif setiap detik.</p>
+            <div class="card-praktis">Hasil akhir sesi & acuan harga saat ini</div>
+        </div>
+    </div>
+
+    <div class="footer-note" data-aos="fade-up">
+        <p>Gunakan Akronim <strong>TABRANI</strong> untuk mempercepat analisis candlestick Anda di berbagai market (Forex, Crypto, Saham). Desain oleh CindoLab untuk pengalaman trading yang lebih baik.</p>
+        <p style="margin-top: 10px;">&copy; 2026 CindoLab. Semua hak dilindungi.</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
 </body>
 </html>
