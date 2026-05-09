@@ -143,3 +143,4 @@ Pada tahun 1995, Adam Back menulis versi algoritma RSA untuk kriptografi kunci p
 Vince Cate membuat halaman web yang mengundang siapa pun untuk menjadi pedagang senjata internasional; setiap kali seseorang mengklik formulir tersebut, item yang dibatasi ekspor—awalnya PGP, kemudian salinan program Back—akan dikirim melalui pos dari server AS ke server di Anguilla.[47][48][49]
 
 Sumber selengkapnya di https://en.wikipedia.org/wiki/Cypherpunk
+

@@ -70,3 +70,4 @@ Boxer, kuda kereta pekerja keras yang memiliki motto “Saya akan bekerja lebih 
 Alih-alih pensiun, Napoleon menjualnya ke pabrik lem untuk mendapatkan uang wiski sambil memberi tahu hewan-hewan bahwa dia meninggal di rumah sakit.
 
 Sumber [𝕏](https://x.com/HistoryNutOTD/status/1957204026573144400)
+

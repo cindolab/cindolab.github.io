@@ -60,3 +60,4 @@ Ironisnya?
 Hasil yang paling menarik - kebebasan finansial, ketenangan pikiran, kekayaan generasi - datang dari proses yang paling membosankan.
 
 Sumber [𝕏](https://x.com/kintsugiinvest/status/1968642437754089946)
+

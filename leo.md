@@ -25,3 +25,4 @@ Leo adalah representasi visual harga pembukaan, penutupan, tertinggi, dan terend
   <p>Pola Doji muncul ketika harga pembukaan dan penutupan sangat dekat, menunjukkan pasar sedang ragu-ragu.</p>
   <p>"Doji sering menjadi sinyal perubahan tren." – Analis Pasar</p>
 </details>
+

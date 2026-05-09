@@ -13,3 +13,4 @@ Misi: Saling membantu dalam melayani dan mempertumbuhkan modal
   <p>"Pengetahuan adalah investasi terbaik." – Benjamin Franklin</p>
 </details>
 
+

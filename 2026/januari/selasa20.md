@@ -1,1 +1,2 @@
-Merubah tampilan cindopay.cindo.workers.dev seperti halaman cindo.pages.dev
+Merubah tampilan Sparta Gold.cindo.workers.dev seperti halaman cindo.pages.dev
+

@@ -121,3 +121,4 @@ Untuk sumber belajar lebih lanjut, kunjungi:
 ---
 
 *Catatan: Artikel ini dibuat untuk tujuan edukasi dan tidak merupakan saran keuangan. Trading melibatkan risiko tinggi, dan keputusan harus dibuat dengan hati-hati.*
+

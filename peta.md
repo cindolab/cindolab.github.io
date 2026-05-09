@@ -186,3 +186,4 @@ Jika platform kamu tidak mendukung Mermaid atau error berlanjut, kamu bisa membu
 | 22:30-23:00 | Persiapan Hari Berikut | Cek kalender ekonomi                   | 30 menit |
 | 23:00       | Target Pip Harian      | Capai 50-100 pip (scalping/day trading)| -       |
 
+

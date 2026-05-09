@@ -11,3 +11,4 @@ Yang lainnya untuk semua orang lainnya dengan harapan.
 
 “Keinginan untuk menyelesaikan sesuatu dengan cepat menghalangi kita untuk menyelesaikannya secara menyeluruh.”
 — Konfusius
+

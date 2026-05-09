@@ -1,20 +1,20 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/cindolab/cindolab.github.io/main/cindo1.svg" alt="CindoLab" width="180">
+  <img src="https://raw.githubusercontent.com/Sparta Gold/Sparta Gold.github.io/main/cindo1.svg" alt="Sparta Gold" width="180">
 </p>
 
-# CindoLab  
+# Sparta Gold  
 **Fintech Research & Innovation Lab | Web3 Banking Replication**
 
 [![ENS cindo.eth](https://img.shields.io/badge/ENS-cindo.eth-0066ff.svg?style=flat&logo=ethereum&logoColor=white)](https://app.ens.domains/cindo.eth)  
 [![ENS arema.eth](https://img.shields.io/badge/ENS-arema.eth-00d1b2.svg?style=flat&logo=ethereum&logoColor=white)](https://app.ens.domains/arema.eth)  
-[![GitHub Stars](https://img.shields.io/github/stars/cindolab/cindolab.github.io?style=social)](https://github.com/cindolab/cindolab.github.io) 
-[![X @cindolab](https://img.shields.io/twitter/follow/cindolab?style=social&logo=x)](https://x.com/cindolab)
+[![GitHub Stars](https://img.shields.io/github/stars/Sparta Gold/Sparta Gold.github.io?style=social)](https://github.com/Sparta Gold/Sparta Gold.github.io) 
+[![X @Sparta Gold](https://img.shields.io/twitter/follow/Sparta Gold?style=social&logo=x)](https://x.com/Sparta Gold)
 
 > **Didirikan pada Portal 11:11 | 11 November 2025, 01:11 PM WIB**  
 
-# README Numerologi "CindoLab"
+# README Numerologi "Sparta Gold"
 
-Kata **CindoLab** dihitung dengan **6 sistem numerologi dunia**.
+Kata **Sparta Gold** dihitung dengan **6 sistem numerologi dunia**.
 
 ---
 
@@ -35,9 +35,9 @@ Kata **CindoLab** dihitung dengan **6 sistem numerologi dunia**.
 
 ---
 
-## Selamat Datang di CindoLab
+## Selamat Datang di Sparta Gold
 
-**CindoLab** adalah **laboratorium fintech terbuka/laboratorium cuan Indonesia** yang mempelajari dan meniru model kesuksesan **bank terbesar dunia** —  
+**Sparta Gold** adalah **laboratorium fintech terbuka/laboratorium cuan Indonesia** yang mempelajari dan meniru model kesuksesan **bank terbesar dunia** —  
 **ICBC • CCB • ABC • BOC • JPMorgan Chase** —  
 dengan teknologi **blockchain, smart contract, dan identitas Web3**.
 
@@ -46,9 +46,9 @@ dengan teknologi **blockchain, smart contract, dan identitas Web3**.
 
 ---
 
-## Tentang CindoLab
+## Tentang Sparta Gold
 
-CindoLab adalah **inti inovasi** dari tim **Puncak Lembah**, **arema.eth**, dan pemilik ENS:  
+Sparta Gold adalah **inti inovasi** dari tim **Puncak Lembah**, **arema.eth**, dan pemilik ENS:  
 [`cindo.eth`](https://app.ens.domains/cindo.eth) | [`arema.eth`](https://app.ens.domains/arema.eth)
 
 ### Visi
@@ -96,11 +96,11 @@ Membangun **laboratorium fintech terbuka** yang menggabungkan **data perbankan g
 ### Apa Itu **Portal 11:11**?
 > **Portal 11:11** adalah **momen energi tinggi** dalam numerologi modern — terjadi saat **tanggal & jam menunjukkan 11:11** (11 November pukul 11:11).  
 > Dianggap sebagai **gerbang manifestasi**, **sinkronisitas**, dan **awal baru** — sangat kuat untuk **peluncuran proyek, visi, dan tujuan jangka panjang**.  
-> **Hari ini (11/11/2025)** adalah **Portal 11:11 tahunan** — energi **8** dari **11 + 6 = 17 → 8** — **hari terbaik untuk meluncurkan CindoLab**. https://gitlab.com/cindolab dan https://trustlessness.eth.limo/ juga diluncurkan pada 2025 Nov 11
+> **Hari ini (11/11/2025)** adalah **Portal 11:11 tahunan** — energi **8** dari **11 + 6 = 17 → 8** — **hari terbaik untuk meluncurkan Sparta Gold**. https://gitlab.com/Sparta Gold dan https://trustlessness.eth.limo/ juga diluncurkan pada 2025 Nov 11
 
 ---
 
-## Mengapa CindoLab?
+## Mengapa Sparta Gold?
 
 - **Identitas Web3 Asli** → `cindo.eth` = kepemilikan terverifikasi  
 - **Transparansi 100%** → Semua kode, data, & smart contract open-source  
@@ -112,7 +112,7 @@ Membangun **laboratorium fintech terbuka** yang menggabungkan **data perbankan g
 ## Cara Memulai
 
 1. **Jelajahi Riset**  
-   → [https://cindolab.github.io/a1-whitepaper](https://cindolab.github.io/a1-whitepaper)
+   → [https://Sparta Gold.github.io/a1-whitepaper](https://Sparta Gold.github.io/a1-whitepaper)
    *Laporan, simulasi, whitepaper*
 
 2. **Verifikasi ENS**  
@@ -120,17 +120,17 @@ Membangun **laboratorium fintech terbuka** yang menggabungkan **data perbankan g
 
 3. **Kontribusi**  
    ```bash
-   git clone https://github.com/cindolab/cindolab.git
+   git clone https://github.com/Sparta Gold/Sparta Gold.git
 
 ## Ikuti Perjalanan Kami
 
 | Platform       | Link                                                                     |
 |----------------|--------------------------------------------------------------------------|
-| Website        | [cindolab.github.io](https://cindolab.github.io/)                        |
-| Instagram      | [instagram.com/cindolabot](https://www.instagram.com/cindolabot/)        |
-| X (Twitter)    | [@cindolab](https://x.com/cindolab)                                      |
-| Facebook       | [facebook.com/cindolab](https://www.facebook.com/cindolab)               |
-| CindoPay       | [https://cindopay.cindo.workers.dev](https://cindopay.cindo.workers.dev) |
+| Website        | [Sparta Gold.github.io](https://Sparta Gold.github.io/)                        |
+| Instagram      | [instagram.com/Sparta Goldot](https://www.instagram.com/Sparta Goldot/)        |
+| X (Twitter)    | [@Sparta Gold](https://x.com/Sparta Gold)                                      |
+| Facebook       | [facebook.com/Sparta Gold](https://www.facebook.com/Sparta Gold)               |
+| Sparta Gold       | [https://Sparta Gold.cindo.workers.dev](https://Sparta Gold.cindo.workers.dev) |
 
 ---
 
@@ -148,7 +148,7 @@ Kami **membuka pintu lebar** untuk:
 
 | Tahun | Fokus Utama | Rencana Strategis |
 |-------|-------------|------------------|
-| **2025** | Fondasi & Branding | - Peluncuran platform `CindoLab` <br> - Logo & identitas visual <br> - Website resmi & profil investasi |
+| **2025** | Fondasi & Branding | - Peluncuran platform `Sparta Gold` <br> - Logo & identitas visual <br> - Website resmi & profil investasi |
 | **2026** | Ekspansi & Produk | - Pembukaan hotel kreatif pertama <br> - Paket pengalaman romantis & bisnis <br> - Program investasi properti tahap awal |
 | **2027** | Skala & Globalisasi | - Ekspansi ke beberapa kota besar di Indonesia <br> - Kemitraan internasional <br> - Platform investasi berbasis blockchain |
 
@@ -172,6 +172,7 @@ Kami **membuka pintu lebar** untuk:
 
 ---
 
-> **© 2026 CindoLab**  
+> **© 2026 Sparta Gold**  
 > *Dari Portal 11:11 menuju harmoni keuangan terdesentralisasi.*  
 > `cindo.eth` — **verified on-chain, trusted off-chain.**
+

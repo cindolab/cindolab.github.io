@@ -22,3 +22,4 @@ Ellison menyewa detektif swasta untuk menyelidiki praktik bisnis Microsoft dan I
 Dia yakin mereka menggunakan taktik ilegal untuk memonopoli pasar, dan dia menginginkan pengaruh.
 
 “Semua adil dalam cinta, perang, dan bisnis,” candanya suatu ketika.
+

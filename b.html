@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CindoLab Bookkeeping Pro</title>
+    <title>Sparta Gold Bookkeeping Pro</title>
     <link rel="icon" type="image/svg+xml" href="/cindo.svg" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -103,7 +103,7 @@
     <!-- Mobile Nav -->
     <div class="md:hidden glass-header p-4 flex justify-between items-center sticky top-0 z-50">
         <h1 class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-            CindoLab POS</h1>
+            Sparta Gold POS</h1>
         <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-slate-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -128,7 +128,7 @@
     <aside class="hidden md:flex flex-col w-64 glass-panel border-r-0 border-r-slate-800 h-screen sticky top-0 p-6">
         <div class="mb-10">
             <h1 class="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-                CindoLab</h1>
+                Sparta Gold</h1>
             <p class="text-xs text-slate-500 mt-1 uppercase tracking-widest">Bookkeeping Pro</p>
         </div>
 
@@ -184,7 +184,7 @@
         </nav>
 
         <div class="mt-auto pt-6 border-t border-slate-700/50">
-            <p class="text-[10px] text-slate-600 text-center">&copy; 2026 CindoLab Technology<br>Ver 2.1.0 (Profit)</p>
+            <p class="text-[10px] text-slate-600 text-center">&copy; 2026 Sparta Gold Technology<br>Ver 2.1.0 (Profit)</p>
         </div>
     </aside>
 
@@ -565,7 +565,7 @@
     <!-- Hidden Receipt Area -->
     <div id="receipt-area" class="hidden text-black text-xs font-mono">
         <div style="text-align:center; margin-bottom: 10px;">
-            <h2 style="font-size: 14px; font-weight: bold; margin:0;">CINDOLAB</h2>
+            <h2 style="font-size: 14px; font-weight: bold; margin:0;">Sparta Gold</h2>
             <p style="margin:0;">Agar-Agar Bubuk Premium</p>
             <p style="margin:0;" id="receipt-date"></p>
         </div>
@@ -589,12 +589,12 @@
             { id: 4, name: 'Bubuk Jelly Mix', buyPrice: 5000, price: 7500, stock: 30 }
         ];
 
-        let inventory = JSON.parse(localStorage.getItem('cindolab_inventory')) || defaultInventory;
+        let inventory = JSON.parse(localStorage.getItem('Sparta Gold_inventory')) || defaultInventory;
         // Migrate old inventory if missing buyPrice
         inventory = inventory.map(i => ({ ...i, buyPrice: i.buyPrice || (i.price * 0.7) }));
 
-        let transactions = JSON.parse(localStorage.getItem('cindolab_transactions')) || [];
-        let customers = JSON.parse(localStorage.getItem('cindolab_customers')) || [];
+        let transactions = JSON.parse(localStorage.getItem('Sparta Gold_transactions')) || [];
+        let customers = JSON.parse(localStorage.getItem('Sparta Gold_customers')) || [];
         let cart = [];
 
         // --- RECIPES ---
@@ -1310,9 +1310,9 @@
 
         // --- UTILS ---
         function saveData() {
-            localStorage.setItem('cindolab_inventory', JSON.stringify(inventory));
-            localStorage.setItem('cindolab_transactions', JSON.stringify(transactions));
-            localStorage.setItem('cindolab_customers', JSON.stringify(customers)); // New
+            localStorage.setItem('Sparta Gold_inventory', JSON.stringify(inventory));
+            localStorage.setItem('Sparta Gold_transactions', JSON.stringify(transactions));
+            localStorage.setItem('Sparta Gold_customers', JSON.stringify(customers)); // New
         }
 
         function formatRupiah(number) {
@@ -1323,7 +1323,7 @@
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({ inventory, transactions }));
             const downloadAnchorNode = document.createElement('a');
             downloadAnchorNode.setAttribute("href", dataStr);
-            downloadAnchorNode.setAttribute("download", "backup_cindolab_pos.json");
+            downloadAnchorNode.setAttribute("download", "backup_Sparta Gold_pos.json");
             document.body.appendChild(downloadAnchorNode);
             downloadAnchorNode.click();
             downloadAnchorNode.remove();

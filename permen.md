@@ -1,7 +1,7 @@
 # 🍬 Permen Tabrani
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/cindolabs/TABRANI/527e716ac8a0fe1364fd86b0b1f878b6f4ad7959/pt.svg" alt="Permen Tabrani Logo" width="180">
+  <img src="https://raw.githubusercontent.com/Sparta Golds/TABRANI/527e716ac8a0fe1364fd86b0b1f878b6f4ad7959/pt.svg" alt="Permen Tabrani Logo" width="180">
 </p>
 
 > **“Permen bukan hanya camilan, tapi juga hadiah kecil yang membawa senyum.”**  
@@ -48,3 +48,4 @@
 
 > **Dibuat dengan 🍭 oleh Mochamad Tabrani**  
 > Terakhir diperbarui: 9 November 2025
+
