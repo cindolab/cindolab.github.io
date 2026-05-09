@@ -23,3 +23,4 @@ Dia yakin mereka menggunakan taktik ilegal untuk memonopoli pasar, dan dia mengi
 
 “Semua adil dalam cinta, perang, dan bisnis,” candanya suatu ketika.
 
+

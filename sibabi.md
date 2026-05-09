@@ -71,3 +71,4 @@ Alih-alih pensiun, Napoleon menjualnya ke pabrik lem untuk mendapatkan uang wisk
 
 Sumber [𝕏](https://x.com/HistoryNutOTD/status/1957204026573144400)
 
+

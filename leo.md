@@ -26,3 +26,4 @@ Leo adalah representasi visual harga pembukaan, penutupan, tertinggi, dan terend
   <p>"Doji sering menjadi sinyal perubahan tren." – Analis Pasar</p>
 </details>
 
+

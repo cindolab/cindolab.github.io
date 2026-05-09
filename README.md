@@ -176,3 +176,4 @@ Kami **membuka pintu lebar** untuk:
 > *Dari Portal 11:11 menuju harmoni keuangan terdesentralisasi.*  
 > `cindo.eth` — **verified on-chain, trusted off-chain.**
 
+

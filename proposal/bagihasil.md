@@ -72,3 +72,4 @@ Berikut perbandingan **Basic Package** HOCINDO dengan deposito bank pemerintah d
 - Data bank bersifat asumsi berdasarkan rata-rata suku bunga deposito 2025; verifikasi dengan bank terkait.
 - Investasi di HOCINDO memiliki risiko lebih tinggi dibandingkan deposito bank. Konsultasikan dengan penasihat keuangan sebelum memutuskan.
 
+

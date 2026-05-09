@@ -80,3 +80,4 @@ Bergabunglah di Telegram untuk berbagi perpaduan kebijaksanaan dan pemberontakan
   <i>"Berpikir cerdas seperti Munger, hidup berani seperti Harley."</i>
 </p>
 
+

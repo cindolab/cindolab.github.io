@@ -144,3 +144,4 @@ Vince Cate membuat halaman web yang mengundang siapa pun untuk menjadi pedagang 
 
 Sumber selengkapnya di https://en.wikipedia.org/wiki/Cypherpunk
 
+

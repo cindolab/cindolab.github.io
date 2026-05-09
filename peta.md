@@ -187,3 +187,4 @@ Jika platform kamu tidak mendukung Mermaid atau error berlanjut, kamu bisa membu
 | 23:00       | Target Pip Harian      | Capai 50-100 pip (scalping/day trading)| -       |
 
 
+
