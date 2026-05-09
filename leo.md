@@ -27,3 +27,4 @@ Leo adalah representasi visual harga pembukaan, penutupan, tertinggi, dan terend
 </details>
 
 
+

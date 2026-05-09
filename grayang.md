@@ -46,3 +46,4 @@ Jika Anda ingin trading dengan gaya ngebom dan full margin, salah satu ilmu dasa
 
 
 
+

@@ -62,3 +62,4 @@ Hasil yang paling menarik - kebebasan finansial, ketenangan pikiran, kekayaan ge
 Sumber [𝕏](https://x.com/kintsugiinvest/status/1968642437754089946)
 
 
+

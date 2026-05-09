@@ -219,3 +219,4 @@ Biarkan mereka larut dalam pengetahuan langsung.
 Sumber [𝕏](https://x.com/cperezauthor/status/1958122584287203642)
 
 
+

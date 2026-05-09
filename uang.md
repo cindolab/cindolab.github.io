@@ -9,3 +9,4 @@ layout: default
 2. Memiliki kelompok berburu di pasar uang memperbaiki psikologis, saling melengkapi keterampilan berburu.
 
 
+
